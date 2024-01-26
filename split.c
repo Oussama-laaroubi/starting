@@ -6,32 +6,29 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:01:09 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/24 19:06:02 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:53:49 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
 #include "push_swap.h"
 
-static int  count_words(char *str, char c){
+static int	count_words(char *str, char c)
+{
+	int	count;
 
-    int count = 0;
-
-    while(*str)
-    {
-        while(*str && *str == c)
-            str++;
-
-        if(*str)
-        {
-            count++;
-            while(*str && *str != c)
-                str++;
-        }
-    }
-    return count;
+	count = 0;
+	while (*str)
+	{
+		while (*str && *str == c)
+			str++;
+		if (*str)
+		{
+			count++;
+			while (*str && *str != c)
+				str++;
+		}
+	}
+	return (count);
 }
 
 static char	**ft_free(char **ptr, int k)

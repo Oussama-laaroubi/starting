@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/26 19:01:12 by olaaroub         ###   ########.fr       */
+/*   Created: 2024/01/26 16:01:26 by olaaroub          #+#    #+#             */
+/*   Updated: 2024/01/26 19:12:40 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-typedef struct s_node
+int	main(int ac, char **av)
 {
-	int				value;
-	struct s_node	*next;
-	struct s_node	*previous;
-}					node;
+	node	*head;
+	node	*tail;
 
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-void				fill_stack(char **av, node **head, node **tail);
-char				**ft_split(char const *s, char c);
-
-#endif
+	head = NULL;
+	tail = NULL;
+	if (ac == 1)
+		return (0);
+	fill_stack(av, &head, &tail);
+	while (tail)
+	{
+		printf("%d\n", tail->value);
+		tail = tail->previous;
+	}
+}
