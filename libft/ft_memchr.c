@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 12:38:19 by olaaroub         ###   ########.fr       */
+/*   Created: 2023/11/14 11:31:08 by olaaroub          #+#    #+#             */
+/*   Updated: 2023/11/22 21:32:03 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void    check_duplicates(t_node **head){
-
-    t_node	*tmp;
-	t_node    *next;
-
-	tmp = *head;
-	while (tmp)
-	{
-		next = tmp->next;
-		while (next)
-		{
-			if (next->value == tmp->value)
-			{
-				printf("Error: Duplicates not allowed");
-				exit(1);
-			}
-			next = next->next;
-		}
-		tmp = tmp->next;
-	}
-}
-
-void	check_stack(t_node **head)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    check_duplicates(head);
+	unsigned char	*p;
+	unsigned char	*found_char;
+	size_t			i;
+
+	p = (unsigned char *)s;
+	found_char = NULL;
+	i = 0;
+	while (n--)
+	{
+		if (p[i] != (unsigned char)c)
+			i++;
+		else
+		{
+			found_char = p + i;
+			break ;
+		}
+	}
+	return (found_char);
 }

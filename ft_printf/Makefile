@@ -5,37 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/27 10:55:02 by olaaroub          #+#    #+#              #
-#    Updated: 2024/01/27 18:36:13 by olaaroub         ###   ########.fr        #
+#    Created: 2023/11/24 18:42:49 by olaaroub          #+#    #+#              #
+#    Updated: 2023/12/09 11:35:05 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-src = checks.c initialize.c split.c stack_utils.c main.c
-obj = $(src:.c=.o)
-name = push_swap
-LIB  = libft/libft.a
-PRINTF = ft_printf/libftprintf.a
+AR = ar -rc
+RM = rm -rf
+SRCS = ft_printf.c ft_putchar.c ft_putstr.c ft_putptr.c ft_putnbr_base.c ft_placeholder.c ft_putptr_base.c
+OBJ = $(SRCS:.c=.o)
+NAME = libftprintf.a
 
-all : $(name)
+all : $(NAME)
 
-$(LIB):
-	@make -C libft/
+$(NAME): $(OBJ)
+	@$(AR) $(NAME) $(OBJ)
 
-$(PRINTF):
-	@make -C ft_printf/
+$(OBJ):$(SRCS)
+	@$(CC) $(CFLAGS) -c $(SRCS)
 
-$(name): $(obj) $(PRINTF) $(LIB)
-	$(CC) $(CFLAGS) $(PRINTF) $(LIB) $(obj) -o $(name)
 
 clean:
-	rm -rf $(obj)
-	make clean -C libft
-	make clean -C ft_printf
+	@$(RM) $(OBJ)
+
 fclean:
-	rm -rf $(name) $(obj)
-	make fclean -C libft
-	make fclean -C ft_printf
+	@$(RM) $(NAME) $(OBJ)
 
 re: fclean all
+
+.PHONY : clean fclean all re

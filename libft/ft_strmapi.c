@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 12:38:19 by olaaroub         ###   ########.fr       */
+/*   Created: 2023/11/17 16:21:26 by olaaroub          #+#    #+#             */
+/*   Updated: 2023/11/22 21:28:11 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void    check_duplicates(t_node **head){
-
-    t_node	*tmp;
-	t_node    *next;
-
-	tmp = *head;
-	while (tmp)
-	{
-		next = tmp->next;
-		while (next)
-		{
-			if (next->value == tmp->value)
-			{
-				printf("Error: Duplicates not allowed");
-				exit(1);
-			}
-			next = next->next;
-		}
-		tmp = tmp->next;
-	}
-}
-
-void	check_stack(t_node **head)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    check_duplicates(head);
+	char			*str;
+	char			*ptr;
+	unsigned int	i;
+
+	if (!s || !f)
+		return (NULL);
+	ptr = malloc(ft_strlen(s) + 1);
+	if (!ptr)
+		return (NULL);
+	str = (char *)s;
+	i = 0;
+	while (str[i])
+	{
+		ptr[i] = (*f)(i, s[i]);
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }

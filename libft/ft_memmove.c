@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 12:38:19 by olaaroub         ###   ########.fr       */
+/*   Created: 2023/11/11 18:38:45 by olaaroub          #+#    #+#             */
+/*   Updated: 2023/11/22 21:31:45 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void    check_duplicates(t_node **head){
-
-    t_node	*tmp;
-	t_node    *next;
-
-	tmp = *head;
-	while (tmp)
-	{
-		next = tmp->next;
-		while (next)
-		{
-			if (next->value == tmp->value)
-			{
-				printf("Error: Duplicates not allowed");
-				exit(1);
-			}
-			next = next->next;
-		}
-		tmp = tmp->next;
-	}
-}
-
-void	check_stack(t_node **head)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-    check_duplicates(head);
+	size_t	i;
+	char	*s;
+	char	*d;
+
+	s = (char *)src;
+	d = (char *)dest;
+	i = 0;
+	if ((!d && !s) || len == 0)
+		return (dest);
+	if (d > s)
+	{
+		while (len--)
+		{
+			d[len] = s[len];
+		}
+	}
+	else
+	{
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	return (dest);
 }

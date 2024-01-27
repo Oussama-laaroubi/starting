@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 12:38:19 by olaaroub         ###   ########.fr       */
+/*   Created: 2023/11/14 19:07:36 by olaaroub          #+#    #+#             */
+/*   Updated: 2023/11/22 21:31:54 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void    check_duplicates(t_node **head){
-
-    t_node	*tmp;
-	t_node    *next;
-
-	tmp = *head;
-	while (tmp)
-	{
-		next = tmp->next;
-		while (next)
-		{
-			if (next->value == tmp->value)
-			{
-				printf("Error: Duplicates not allowed");
-				exit(1);
-			}
-			next = next->next;
-		}
-		tmp = tmp->next;
-	}
-}
-
-void	check_stack(t_node **head)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-    check_duplicates(head);
+	unsigned char	*char_s1;
+	unsigned char	*char_s2;
+
+	char_s1 = (unsigned char *)str1;
+	char_s2 = (unsigned char *)str2;
+	while (n--)
+	{
+		if (*char_s1 != *char_s2)
+			return (*char_s1 - *char_s2);
+		char_s1++;
+		char_s2++;
+	}
+	return (0);
 }

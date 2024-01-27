@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:01:26 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 11:12:06 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:37:47 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int	main(int ac, char **av)
 	tail = NULL;
 	if (ac == 1)
 		return (0);
-	fill_stack(av, &head, &tail);
+	fill_stack(av, &tail, &head);
 	check_stack(&head);
-	while (tail)
+	while (head)
 	{
-		printf("%d\n", tail->value);
-		tail = tail->previous;
+		ft_printf("%d\n", head->value);
+		head = head->next;
 	}
 }

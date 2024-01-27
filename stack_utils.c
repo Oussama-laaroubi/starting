@@ -6,13 +6,13 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 11:10:40 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:47:28 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init(t_node **head, t_node **tail, int value)
+void	init(t_node **tail, t_node **head, int value)
 {
 	t_node	*new;
 
@@ -27,6 +27,18 @@ void	init(t_node **head, t_node **tail, int value)
 	new->next = NULL;
 	*head = new;
 	*tail = new;
+}
+
+t_node	*find_last_node(t_node *head){
+	t_node *ptr;
+
+	ptr = head;
+
+	while(ptr->next != NULL){
+
+		ptr = ptr->next;
+	}
+	return ptr;
 }
 
 void	swap(t_node **head)
@@ -49,9 +61,10 @@ void	swap(t_node **head)
 	*head = tmp;
 }
 
-void	append_beggining(t_node **head, int value)
+void	append_last(t_node **tail, int value)
 {
 	t_node	*new;
+
 
 	new = malloc(sizeof(t_node));
 	if (new == NULL)
@@ -60,11 +73,11 @@ void	append_beggining(t_node **head, int value)
 		return ;
 	}
 	new->value = value;
-	new->previous = NULL;
-	new->next = *head;
-	if (*head != NULL)
+	new->previous = *tail;
+	new->next = NULL;
+	if (*tail != NULL)
 	{
-		(*head)->previous = new;
+		(*tail)->next = new;
 	}
-	*head = new;
+	*tail = new;
 }

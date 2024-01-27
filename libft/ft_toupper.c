@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 12:38:19 by olaaroub         ###   ########.fr       */
+/*   Created: 2023/11/08 21:22:49 by olaaroub          #+#    #+#             */
+/*   Updated: 2023/11/22 21:58:36 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void    check_duplicates(t_node **head){
-
-    t_node	*tmp;
-	t_node    *next;
-
-	tmp = *head;
-	while (tmp)
-	{
-		next = tmp->next;
-		while (next)
-		{
-			if (next->value == tmp->value)
-			{
-				printf("Error: Duplicates not allowed");
-				exit(1);
-			}
-			next = next->next;
-		}
-		tmp = tmp->next;
-	}
-}
-
-void	check_stack(t_node **head)
+int	ft_toupper(int c)
 {
-    check_duplicates(head);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 12:38:19 by olaaroub         ###   ########.fr       */
+/*   Created: 2023/11/23 17:32:17 by olaaroub          #+#    #+#             */
+/*   Updated: 2023/12/10 15:11:43 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-static void    check_duplicates(t_node **head){
-
-    t_node	*tmp;
-	t_node    *next;
-
-	tmp = *head;
-	while (tmp)
-	{
-		next = tmp->next;
-		while (next)
-		{
-			if (next->value == tmp->value)
-			{
-				printf("Error: Duplicates not allowed");
-				exit(1);
-			}
-			next = next->next;
-		}
-		tmp = tmp->next;
-	}
-}
-
-void	check_stack(t_node **head)
+int	ft_printf(const char *placeholder, ...)
 {
-    check_duplicates(head);
+	va_list	args;
+	int		count;
+
+	va_start(args, placeholder);
+	count = 0;
+	while (*placeholder != '\0')
+	{
+		if (*placeholder == '%' && *(placeholder + 1))
+			count += ft_placeholder(*(++placeholder), args);
+		else if (*placeholder != '%')
+			count += write(1, placeholder, 1);
+		++placeholder;
+	}
+	va_end(args);
+	return (count);
 }

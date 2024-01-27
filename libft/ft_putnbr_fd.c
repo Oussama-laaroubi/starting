@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 12:38:19 by olaaroub         ###   ########.fr       */
+/*   Created: 2023/11/18 17:50:16 by olaaroub          #+#    #+#             */
+/*   Updated: 2023/11/22 21:30:53 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void    check_duplicates(t_node **head){
-
-    t_node	*tmp;
-	t_node    *next;
-
-	tmp = *head;
-	while (tmp)
-	{
-		next = tmp->next;
-		while (next)
-		{
-			if (next->value == tmp->value)
-			{
-				printf("Error: Duplicates not allowed");
-				exit(1);
-			}
-			next = next->next;
-		}
-		tmp = tmp->next;
-	}
-}
-
-void	check_stack(t_node **head)
+void	ft_putnbr_fd(int n, int fd)
 {
-    check_duplicates(head);
+	if (fd >= 0)
+	{
+		if (n == -2147483648)
+			ft_putstr_fd("-2147483648", fd);
+		else
+		{
+			if (n < 0)
+			{
+				ft_putchar_fd('-', fd);
+				n = -n;
+			}
+			if (n >= 10)
+			{
+				ft_putnbr_fd(n / 10, fd);
+				ft_putchar_fd(48 + n % 10, fd);
+			}
+			else
+				ft_putchar_fd(n + 48, fd);
+		}
+	}
 }

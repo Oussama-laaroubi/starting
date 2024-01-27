@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 11:11:23 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:47:38 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
@@ -25,11 +27,11 @@ typedef struct s_node
 	struct s_node	*previous;
 }					t_node;
 
-void				fill_stack(char **av, node **head, node **tail);
+void				fill_stack(char **av, t_node **tail, t_node **head);
 char				**ft_split(char const *s, char c);
-void				init(node **head, node **tail, int value);
-void				swap(node **head);
-void				check_stack(node **head);
-void				append_beggining(node **head, int value);
+void				init(t_node **tail, t_node **head, int value);
+void				swap(t_node **head);
+void				check_stack(t_node **head);
+void				append_last(t_node **tail, int value);
 
 #endif
