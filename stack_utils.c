@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 18:47:28 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:42:20 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ void	init(t_node **tail, t_node **head, int value)
 	*tail = new;
 }
 
-t_node	*find_last_node(t_node *head){
-	t_node *ptr;
+t_node	*find_last_node(t_node *head)
+{
+	t_node	*ptr;
 
 	ptr = head;
-
-	while(ptr->next != NULL){
-
+	while (ptr->next != NULL)
+	{
 		ptr = ptr->next;
 	}
-	return ptr;
+	return (ptr);
 }
 
 void	swap(t_node **head)
@@ -65,7 +65,6 @@ void	append_last(t_node **tail, int value)
 {
 	t_node	*new;
 
-
 	new = malloc(sizeof(t_node));
 	if (new == NULL)
 	{
@@ -80,4 +79,24 @@ void	append_last(t_node **tail, int value)
 		(*tail)->next = new;
 	}
 	*tail = new;
+}
+
+void	deallocate_stack(t_node **head, t_node **tail)
+{
+	t_node *curr;
+	curr = *head;
+
+	if(*head == NULL)
+		return;
+
+	while(curr->next)
+	{
+		curr = curr->next;
+		free(curr->previous);
+	}
+	free(curr);
+	curr = NULL;
+
+	*tail = NULL;
+	*head = NULL;
 }
