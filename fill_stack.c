@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize.c                                       :+:      :+:    :+:   */
+/*   fill_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:39:26 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 23:04:53 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/28 18:01:19 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,23 @@
 static void	start_stack(t_node **tail, t_node **head, char **ptr)
 {
 	int	k;
-	int f;
 
 	k = 1;
-	init(tail, head, atoi(ptr[0]));
+	init(tail, head, ft_atoi(ptr[0]));
 	while (ptr[k] != NULL && ptr[k][0] != '\0')
 	{
-		append_last(tail, atoi(ptr[k]));
+		append_last(tail, ft_atoi(ptr[k]));
+		free(ptr[k]);
 		k++;
 	}
-
-	f = 0;
-	while (ptr[f])
-	{
-		free(ptr[f]);
-		ptr[f] = NULL;
-		f++;
-	}
-	free(ptr[f]);
-
 }
 
-void	fill_stack(char **av, t_node **tail, t_node **head)
+void	fill_stack(char **av, t_node **tail, t_node **head, char **ptr)
 {
-	char	**ptr;
 	int		k;
 	bool	first_time;
 	int		index;
-	int		f;
 
-	ptr = NULL;
 	k = 1;
 	first_time = true;
 	while (av[k])
@@ -57,20 +44,13 @@ void	fill_stack(char **av, t_node **tail, t_node **head)
 		}
 		while (ptr[index] && first_time == false)
 		{
-			append_last(tail, atoi(ptr[index]));
+			append_last(tail, ft_atoi(ptr[index]));
+			free(ptr[index]);
 			index++;
 		}
-		f = 0;
-		while (ptr[f])
-		{
-			free(ptr[f]);
-			ptr[f] = NULL;
-			f++;
-		}
-		free(ptr[f]);
+		free(ptr[index]);
+		free(ptr);
 		first_time = false;
 		k++;
 	}
-	free(ptr);
-	ptr = NULL;
 }

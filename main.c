@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:01:26 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 23:12:53 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/28 18:27:54 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@ int	main(int ac, char **av)
 {
 	t_node	*head;
 	t_node	*tail;
-	t_node 	*tmp;
+	t_node	*tmp;
+	char	**ptr;
 
+	ptr = NULL;
+	(void)ac;
 	head = NULL;
 	tail = NULL;
-	if (ac == 1)
-		return (0);
-	fill_stack(av, &tail, &head);
-	check_stack(&head);
+	check_numbers(av);
+	fill_stack(av, &tail, &head, ptr);
+	check_duplicates(&head);
 	tmp = head;
 	while (tmp)
 	{
@@ -33,5 +35,4 @@ int	main(int ac, char **av)
 	deallocate_stack(&head, &tail);
 	free(tmp);
 	tmp = NULL;
-	system("leaks push_swap");
 }

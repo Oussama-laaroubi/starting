@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:24:14 by olaaroub          #+#    #+#             */
-/*   Updated: 2023/11/22 21:50:26 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/28 18:06:54 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdint.h>
 
 typedef struct s_list
 {

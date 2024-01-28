@@ -6,13 +6,59 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/27 23:01:31 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/28 18:00:33 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	check_duplicates(t_node **head)
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+static void	check_digits(char **ptr)
+{
+	int	k;
+	int	i;
+
+	k = 0;
+	while (ptr[k])
+	{
+		i = 0;
+		if (ptr[k][0] == '-')
+			i = 1;
+		while (ptr[k][i])
+		{
+			if (!ft_isdigit(ptr[k][i]))
+			{
+				printf("Error: Please enter an integer cc !!\n");
+				exit(-1);
+			}
+			i++;
+		}
+		free(ptr[k]);
+		k++;
+	}
+}
+
+static void	check_int(char **ptr)
+{
+	int	i;
+
+	i = 0;
+	while (ptr[i])
+	{
+		if (atol(ptr[i]) > 2147483647 || atol(ptr[i]) < -2147483648)
+		{
+			printf("Error: Please enter an integer !!\n");
+			exit(1);
+		}
+		i++;
+	}
+}
+
+void	check_duplicates(t_node **head)
 {
 	t_node	*tmp;
 	t_node	*next;
@@ -25,7 +71,7 @@ static void	check_duplicates(t_node **head)
 		{
 			if (next->value == tmp->value)
 			{
-				ft_printf("Error: Duplicates not allowed");
+				printf("Error: Duplicates are not allowed !!\n");
 				exit(1);
 			}
 			next = next->next;
@@ -38,7 +84,18 @@ static void	check_duplicates(t_node **head)
 	next = NULL;
 }
 
-void	check_stack(t_node **head)
+void	check_numbers(char **av)
 {
-	check_duplicates(head);
+	char	**ptr;
+	int		arg;
+
+	arg = 1;
+	while (av[arg])
+	{
+		ptr = ft_split(av[arg], ' ');
+		check_int(ptr);
+		check_digits(ptr);
+		free(ptr);
+		arg++;
+	}
 }
