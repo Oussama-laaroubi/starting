@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 11:50:26 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/29 14:28:20 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ typedef struct s_node
 void				fill_stack(char **av, t_node **tail, t_node **head,
 						char **ptr);
 void				init(t_node **tail, t_node **head, int value);
-void				swap(t_node **head);
 void				append_last(t_node **tail, int value);
 void				deallocate_stack(t_node **head, t_node **tail);
 void				check_numbers(char **av);
 void				check_duplicates(t_node **head);
-long 				ft_atol(char *str);
+long				ft_atol(char *str);
+void    			ra(t_node   **head, t_node  **tail);
+void 				sa(t_node **head);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/28 11:56:57 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/29 14:26:36 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,38 +27,6 @@ void	init(t_node **tail, t_node **head, int value)
 	new->next = NULL;
 	*head = new;
 	*tail = new;
-}
-
-t_node	*find_last_node(t_node *head)
-{
-	t_node	*ptr;
-
-	ptr = head;
-	while (ptr->next != NULL)
-	{
-		ptr = ptr->next;
-	}
-	return (ptr);
-}
-
-void	swap(t_node **head)
-{
-	t_node	*tmp;
-
-	if (*head == NULL || (*head)->next == NULL)
-	{
-		return ;
-	}
-	tmp = (*head)->next;
-	(*head)->next = tmp->next;
-	tmp->previous = (*head)->previous;
-	(*head)->previous = tmp;
-	if (tmp->next != NULL)
-	{
-		tmp->next->previous = *head;
-	}
-	tmp->next = *head;
-	*head = tmp;
 }
 
 void	append_last(t_node **tail, int value)

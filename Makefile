@@ -6,19 +6,17 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 10:55:02 by olaaroub          #+#    #+#              #
-#    Updated: 2024/01/29 11:49:42 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/01/29 14:12:25 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-src = checks.c fill_stack.c stack_utils.c main.c help.c
+src = checks.c fill_stack.c stack_utils.c main.c help.c operations.c
 obj = $(src:.c=.o)
 name = push_swap
 LIB  = libft/libft.a
 PRINTF = ft_printf/libftprintf.a
-
-# INCLUDE = -L ./libft -lft
 
 all : $(name)
 
@@ -35,6 +33,7 @@ clean:
 	rm -rf $(obj)
 	make clean -C libft
 	make clean -C ft_printf
+
 fclean:
 	rm -rf $(name) $(obj)
 	make fclean -C libft

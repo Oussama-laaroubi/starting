@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-long    ft_atol(char* str)
+long	ft_atol(char *str)
 {
-    long res;
-    int sign;
-    int i;
+	long	res;
+	int		sign;
+	int		i;
 
-    res = 0;
+	res = 0;
 	sign = 1;
 	i = 0;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))

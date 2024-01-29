@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 11:48:37 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/29 11:58:05 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	check_digits(char **ptr)
 		{
 			if (!ft_isdigit(ptr[k][i]))
 			{
-				printf("Error: Please enter an integer cc !!\n");
+				ft_putstr_fd("Error: Please enter an integer cc !!\n", 2);
 				exit(-1);
 			}
 			i++;
@@ -46,7 +46,7 @@ static void	check_int(char **ptr)
 	{
 		if (ft_atol(ptr[i]) > 2147483647 || ft_atol(ptr[i]) < -2147483648)
 		{
-			printf("Error: Please enter an integer !!\n");
+			ft_putstr_fd("Error: Please enter an integer !!\n", 2);
 			exit(1);
 		}
 		i++;
@@ -66,7 +66,7 @@ void	check_duplicates(t_node **head)
 		{
 			if (next->value == tmp->value)
 			{
-				printf("Error: Duplicates are not allowed !!\n");
+				ft_putstr_fd("Error: Duplicates are not allowed !!\n", 2);
 				exit(1);
 			}
 			next = next->next;
