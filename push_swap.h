@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 16:12:39 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:56:35 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ long				ft_atol(char *str);
 void				ra(t_node **head, t_node **tail);
 void				sa(t_node **head);
 void				rra(t_node **head, t_node **tail);
+void				pb(t_node** head_b, t_node **head);
+void				append_beginning(t_node **head, int value);
 
 #endif

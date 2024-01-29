@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:36:14 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 16:14:05 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:04:18 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,15 @@ void	rra(t_node **head, t_node **tail)
 	(*head) = (*tail);
 	(*tail) = bottom;
 	ft_printf("rra\n");
+}
+
+void    pb(t_node** head_b, t_node **head)
+{
+    t_node* tmp;
+
+    tmp = (*head)->next;
+	printf("im here");
+    append_beginning(head_b, (*head)->value );
+    tmp->previous = NULL;
+    (*head) = tmp;
 }
