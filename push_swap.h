@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 14:28:20 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:12:39 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void				deallocate_stack(t_node **head, t_node **tail);
 void				check_numbers(char **av);
 void				check_duplicates(t_node **head);
 long				ft_atol(char *str);
-void    			ra(t_node   **head, t_node  **tail);
-void 				sa(t_node **head);
+void				ra(t_node **head, t_node **tail);
+void				sa(t_node **head);
+void				rra(t_node **head, t_node **tail);
 
 #endif
