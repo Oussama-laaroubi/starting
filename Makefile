@@ -6,13 +6,13 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 10:55:02 by olaaroub          #+#    #+#              #
-#    Updated: 2024/01/28 18:27:34 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/01/29 11:49:42 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-src = checks.c fill_stack.c split.c stack_utils.c main.c
+src = checks.c fill_stack.c stack_utils.c main.c help.c
 obj = $(src:.c=.o)
 name = push_swap
 LIB  = libft/libft.a

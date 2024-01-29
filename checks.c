@@ -6,16 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/28 18:00:33 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/29 11:48:37 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
 
 static void	check_digits(char **ptr)
 {
@@ -49,7 +44,7 @@ static void	check_int(char **ptr)
 	i = 0;
 	while (ptr[i])
 	{
-		if (atol(ptr[i]) > 2147483647 || atol(ptr[i]) < -2147483648)
+		if (ft_atol(ptr[i]) > 2147483647 || ft_atol(ptr[i]) < -2147483648)
 		{
 			printf("Error: Please enter an integer !!\n");
 			exit(1);

@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   help.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 16:01:26 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 11:37:20 by olaaroub         ###   ########.fr       */
+/*   Created: 2024/01/29 11:41:32 by olaaroub          #+#    #+#             */
+/*   Updated: 2024/01/29 11:47:06 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+long    ft_atol(char* str)
 {
-	t_node	*head;
-	t_node	*tail;
-	t_node	*tmp;
-	char	**ptr;
+    long res;
+    int sign;
+    int i;
 
-	ptr = NULL;
-	(void)ac;
-	head = NULL;
-	tail = NULL;
-	check_numbers(av);
-	fill_stack(av, &tail, &head, ptr);
-	check_duplicates(&head);
-	tmp = head;
-	while (tmp)
+    res = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		ft_printf("%d\n", tmp->value);
-		tmp = tmp->next;
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	deallocate_stack(&head, &tail);
-	free(tmp);
-	tmp = NULL;
-	system("leaks push_swap");
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
+	}
+	return (res * sign);
 }
