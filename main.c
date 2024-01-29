@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:01:26 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 21:03:54 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/29 22:12:09 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,17 @@ int	main(int ac, char **av)
 	(void)ac;
 	head = NULL;
 	tail = NULL;
-	printf("im here");
+	head_b = NULL;
 	check_numbers(av);
 	fill_stack(av, &tail, &head, ptr);
 	check_duplicates(&head);
+	// pb(&head_b, &head);
+	// pb(&head_b, &head);
+	// pb(&head_b, &head);
 
-	pb(&head_b, &head);
-
-	sa(&head);
 	rra(&head, &tail);
+	sa(&head);
+	ra(&head, &tail);
 	tmp2 = head;
 	while (tmp2)
 	{
@@ -40,9 +42,13 @@ int	main(int ac, char **av)
 		tmp2 = tmp2->next;
 	}
 
-	ft_printf("\n\n  %d  \n\n", head_b->value);
+	while(head_b)
+	{
+		ft_printf("%d\n", head_b->value);
+		head_b = head_b->next;
+	}
 
 	deallocate_stack(&head, &tail);
 	free(tmp2);
-	system("leaks push_swap");
+	// system("leaks push_swap");
 }

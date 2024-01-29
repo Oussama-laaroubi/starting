@@ -6,12 +6,12 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 10:55:02 by olaaroub          #+#    #+#              #
-#    Updated: 2024/01/29 18:59:43 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/01/29 22:04:26 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -fsanitize=address -g3 -Wall -Wextra -Werror
 src = checks.c fill_stack.c stack_utils.c main.c help.c operations.c
 obj = $(src:.c=.o)
 name = push_swap
