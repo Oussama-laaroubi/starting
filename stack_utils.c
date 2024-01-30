@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 18:55:25 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/31 00:33:45 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	append_last(t_node **tail, int value)
 	*tail = new;
 }
 
-void	append_beginning(t_node** head, int value)
+void	append_beginning(t_node **head, int value)
 {
 	t_node	*new;
 
@@ -85,4 +85,13 @@ void	deallocate_stack(t_node **head, t_node **tail)
 	curr = NULL;
 	*tail = NULL;
 	*head = NULL;
+}
+
+t_node	*find_tail(t_node *head)
+{
+	if (head == NULL)
+		return (0);
+	while (head->next != NULL)
+		head = head->next;
+	return (head);
 }

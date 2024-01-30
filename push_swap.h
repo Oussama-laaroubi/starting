@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 18:56:35 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/31 00:33:31 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,17 @@ void				check_numbers(char **av);
 void				check_duplicates(t_node **head);
 long				ft_atol(char *str);
 void				ra(t_node **head, t_node **tail);
+void				rb(t_node **head, t_node **tail);
 void				sa(t_node **head);
+void				sb(t_node **head);
 void				rra(t_node **head, t_node **tail);
-void				pb(t_node** head_b, t_node **head);
+void				rrb(t_node **head, t_node **tail);
+void				pb(t_node **head_b, t_node **head);
+void				pa(t_node **head_b, t_node **head);
+void				rr(t_node **head, t_node **head_b);
+void				ss(t_node **head, t_node **head_b);
+
 void				append_beginning(t_node **head, int value);
+t_node				*find_tail(t_node *head);
 
 #endif
