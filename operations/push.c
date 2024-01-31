@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:59:48 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/31 16:38:09 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/31 22:34:51 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static void	push_b(t_node **head_b, t_node **head)
 		tmp = *head;
 	tmp = (*head)->next;
 	append_beginning(head_b, (*head)->value);
-    free(*head);
-    *head = NULL;
-    tmp->previous = NULL;
+	free(*head);
+	*head = NULL;
+	tmp->previous = NULL;
 	(*head) = tmp;
 }
 
@@ -38,7 +38,7 @@ static void	push_a(t_node **head_b, t_node **head)
 		tmp = *head_b;
 	tmp = (*head_b)->next;
 	append_beginning(head, (*head_b)->value);
-    free(*head_b);
+	free(*head_b);
 	(*head_b) = tmp;
 	ft_printf("pa\n");
 }

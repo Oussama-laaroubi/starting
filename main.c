@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:01:26 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/31 16:23:29 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/31 22:30:54 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ int	main(int ac, char **av)
 	t_node	*head;
 	t_node	*tail;
 	char	**ptr;
-	t_node	*tmp2;
+	t_node	*tmp_a;
+	t_node	*tmp_b;
 	t_node	*head_b;
+	t_node	*tail_b;
 
 	ptr = NULL;
 	(void)ac;
@@ -35,25 +37,27 @@ int	main(int ac, char **av)
 	// pb(&head_b, &head);
 	pb(&head, &head_b);
 	pb(&head, &head_b);
+	sb(&head_b);
+	pa(&head_b, &head);
+	pa(&head_b, &head);
+	sa(&head);
 	// printf("tails content is  %d\n", find_tail(head)->value);
 	// ss(&head, &head_b);
 	// sb(&head_b);
-
-
-	tmp2 = head;
-	while (tmp2)
+	tmp_a = head;
+	while (tmp_a)
 	{
-		ft_printf("stack aa %d\n", tmp2->value);
-		tmp2 = tmp2->next;
+		ft_printf("stack aa %d\n", tmp_a->value);
+		tmp_a = tmp_a->next;
 	}
-	while (head_b)
+	tmp_b = head_b;
+	while (tmp_b)
 	{
-		ft_printf("stack bb %d\n", head_b->value);
-		head_b = head_b->next;
+		ft_printf("stack bb %d\n", tmp_b->value);
+		tmp_b = tmp_b->next;
 	}
-	t_node *tail_b = find_tail(head_b);
+	tail_b = find_tail(head_b);
 	deallocate_stack(&head_b, &tail_b);
 	deallocate_stack(&head, &tail);
-	free(tmp2);
 	// system("leaks push_swap");
 }
