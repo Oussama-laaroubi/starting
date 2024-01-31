@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/31 00:33:45 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:17:08 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,7 @@ void	append_beginning(t_node **head, int value)
 	new->next = *head;
 	new->previous = NULL;
 	if (*head != NULL)
-	{
 		(*head)->previous = new;
-	}
 	*head = new;
 }
 

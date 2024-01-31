@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 13:36:14 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/31 16:19:22 by olaaroub         ###   ########.fr       */
+/*   Created: 2024/01/31 15:59:48 by olaaroub          #+#    #+#             */
+/*   Updated: 2024/01/31 16:38:09 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
+static void	push_b(t_node **head_b, t_node **head)
+{
+	t_node	*tmp;
 
-
-
-
-
+	if (*head == NULL)
+		return ;
+	if ((*head)->next == NULL)
+		tmp = *head;
+	tmp = (*head)->next;
+	append_beginning(head_b, (*head)->value);
+    free(*head);
+    *head = NULL;
+    tmp->previous = NULL;
+	(*head) = tmp;
 }
 
-void	pa(t_node **head_b, t_node **head)
+static void	push_a(t_node **head_b, t_node **head)
 {
 	t_node	*tmp;
 
@@ -28,37 +37,20 @@ void	pa(t_node **head_b, t_node **head)
 	if ((*head_b)->next == NULL)
 		tmp = *head_b;
 	tmp = (*head_b)->next;
-	// printf("im here");
 	append_beginning(head, (*head_b)->value);
-	// tmp->previous = NULL;
+    free(*head_b);
 	(*head_b) = tmp;
 	ft_printf("pa\n");
 }
-void	ss(t_node **head, t_node **head_b)
+
+void	pa(t_node **head, t_node **head_b)
 {
-	sa(head);
-	sb(head_b);
-	ft_printf("ss\n");
-}
-void	rr(t_node **head, t_node **head_b)
-{
-	t_node *tail = find_tail(*head);
-	t_node *tail_b = find_tail(*head_b);
-	ra(head, &tail);
-	rb(head_b, &tail_b);
-	ft_printf("rr\n");
+	push_a(head, head_b);
+	ft_printf("pa\n");
 }
 
-void	rrr(t_node **head, t_node **head_b)
+void	pb(t_node **head, t_node **head_b)
 {
-	t_node	*tail;
-	t_node	*tail_b;
-
-	if (*head == NULL)
-		return ;
-	tail = find_tail(*head);
-	tail_b = find_tail(*head_b);
-	rra(head, &tail);
-	rrb(head_b, &tail_b);
-	ft_printf("rrr\n");
+	push_b(head_b, head);
+	ft_printf("pb\n");
 }
