@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/31 16:04:55 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:14:47 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,11 @@ typedef struct s_node
 	struct s_node	*previous;
 }					t_node;
 
-void				fill_stack(char **av, t_node **tail, t_node **head,
-						char **ptr);
+void				fill_stack(char **av, t_node **head, char **ptr);
 void				init(t_node **tail, t_node **head, int value);
 void				append_last(t_node **tail, int value);
-void				deallocate_stack(t_node **head, t_node **tail);
-void				check_numbers(char **av);
+void				deallocate_stack(t_node **head);
+void				check_numbers(char **av, int ac);
 void				check_duplicates(t_node **head);
 long				ft_atol(char *str);
 void				ra(t_node **head);
@@ -47,6 +46,8 @@ void				rr(t_node **head, t_node **head_b);
 void				ss(t_node **head, t_node **head_b);
 void				rrr(t_node **head, t_node **head_b);
 void				append_beginning(t_node **head, int value);
+void				stack_sorted(t_node *head);
 t_node				*find_tail(t_node *head);
+void				print_stack(t_node *head);
 
 #endif

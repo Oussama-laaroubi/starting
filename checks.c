@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 11:58:05 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:52:29 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,16 @@ void	check_duplicates(t_node **head)
 	next = NULL;
 }
 
-void	check_numbers(char **av)
+void	check_numbers(char **av, int ac)
 {
 	char	**ptr;
 	int		arg;
 
+	if (ac < 2)
+	{
+		ft_putstr_fd("Invalid number of arguments !!", 2);
+		exit(1);
+	}
 	arg = 1;
 	while (av[arg])
 	{

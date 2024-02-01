@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:59:48 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/31 22:34:51 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:17:35 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,10 @@ static void	push_b(t_node **head_b, t_node **head)
 
 	if (*head == NULL)
 		return ;
-	if ((*head)->next == NULL)
-		tmp = *head;
 	tmp = (*head)->next;
 	append_beginning(head_b, (*head)->value);
 	free(*head);
 	*head = NULL;
-	tmp->previous = NULL;
 	(*head) = tmp;
 }
 

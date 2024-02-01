@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:39:26 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/29 18:17:38 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:02:18 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,14 @@ static void	start_stack(t_node **tail, t_node **head, char **ptr)
 	}
 }
 
-void	fill_stack(char **av, t_node **tail, t_node **head, char **ptr)
+void	fill_stack(char **av, t_node **head, char **ptr)
 {
 	int		k;
 	bool	first_time;
 	int		index;
+	t_node	*tail;
 
+	tail = find_tail(*head);
 	k = 1;
 	first_time = true;
 	while (av[k])
@@ -39,10 +41,10 @@ void	fill_stack(char **av, t_node **tail, t_node **head, char **ptr)
 		index = 0;
 		ptr = ft_split(av[k], ' ');
 		if (first_time == true)
-			start_stack(tail, head, ptr);
+			start_stack(&tail, head, ptr);
 		while (ptr[index] && first_time == false)
 		{
-			append_last(tail, ft_atoi(ptr[index]));
+			append_last(&tail, ft_atoi(ptr[index]));
 			free(ptr[index]);
 			index++;
 		}
