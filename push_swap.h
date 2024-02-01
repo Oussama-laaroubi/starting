@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 14:14:47 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:33:55 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,12 @@ void				rr(t_node **head, t_node **head_b);
 void				ss(t_node **head, t_node **head_b);
 void				rrr(t_node **head, t_node **head_b);
 void				append_beginning(t_node **head, int value);
-void				stack_sorted(t_node *head);
+bool				stack_sorted(t_node *head);
 t_node				*find_tail(t_node *head);
 void				print_stack(t_node *head);
+int	stack_size(t_node* head);
+t_node* max_node(t_node* head);
+void    sort_three(t_node** head);
+
 
 #endif

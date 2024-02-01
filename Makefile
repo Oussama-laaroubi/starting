@@ -6,14 +6,14 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 10:55:02 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/01 14:10:46 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/02/01 15:31:11 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -fsanitize=address -g3 -Wall -Wextra -Werror
 # CFLAGS = -Wall -Wextra -Werror
-src = checks.c fill_stack.c print.c stack_utils.c main.c help.c out_of_order.c ./operations/push.c ./operations/rotate.c ./operations/reverse_rotate.c ./operations/swap.c
+src = checks.c fill_stack.c print.c ./sorts/sort_three.c stack_utils.c main.c help.c out_of_order.c ./operations/push.c ./operations/rotate.c ./operations/reverse_rotate.c ./operations/swap.c
 obj = $(src:.c=.o)
 name = push_swap
 LIB  = libft/libft.a
