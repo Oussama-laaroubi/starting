@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 19:49:39 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 22:29:50 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ void				print_stack(t_node *head);
 int					stack_size(t_node *head);
 t_node				*max_node(t_node *head);
 void				sort_three(t_node **head);
+void	configure_nodes(t_node *head_a, t_node *head_b);
 
 #endif
