@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 15:33:55 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:01:08 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 typedef struct s_node
 {
 	int				value;
+	int				index;
+	bool			above_median;
 	struct s_node	*next;
 	struct s_node	*previous;
 }					t_node;
