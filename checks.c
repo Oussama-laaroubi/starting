@@ -6,11 +6,36 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 15:46:18 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:41:10 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static long	ft_atol(char *str)
+{
+	long	res;
+	int		sign;
+	int		i;
+
+	res = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
+	}
+	return (res * sign);
+}
 
 static void	check_digits(char **ptr)
 {
@@ -40,7 +65,7 @@ static void	check_digits(char **ptr)
 static void	check_int(char **ptr)
 {
 	int	i;
-	
+
 	i = 0;
 	while (ptr[i])
 	{

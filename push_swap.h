@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 17:01:08 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:42:16 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "ft_printf/ft_printf.h"
 # include "libft/libft.h"
+# include <limits.h>
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -25,6 +26,8 @@ typedef struct s_node
 	int				value;
 	int				index;
 	bool			above_median;
+	int				push_cost;
+	struct s_node	*target;
 	struct s_node	*next;
 	struct s_node	*previous;
 }					t_node;
@@ -35,7 +38,6 @@ void				append_last(t_node **tail, int value);
 void				deallocate_stack(t_node **head);
 void				check_numbers(char **av, int ac);
 void				check_duplicates(t_node **head);
-long				ft_atol(char *str);
 void				ra(t_node **head);
 void				rb(t_node **head);
 void				sa(t_node **head);
