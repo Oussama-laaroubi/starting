@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:56:56 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 18:42:16 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:49:39 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_node
 	int				value;
 	int				index;
 	bool			above_median;
+	bool			cheapest;
 	int				push_cost;
 	struct s_node	*target;
 	struct s_node	*next;

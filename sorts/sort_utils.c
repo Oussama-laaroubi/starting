@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 16:57:29 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 18:31:36 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:54:29 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,33 @@ void	push_cost(t_node *head_a, t_node *head_b)
 			head_a->push_cost += stack_b_size - head_a->target->index;
 		head_a = head_a->next;
 	}
+}
+
+void	lowest_cost(t_node *head)
+{
+	t_node	*cheapest_node;
+	int		lowest_value;
+
+	if (!head)
+		return ;
+	lowest_value = INT_MAX;
+	while (head)
+	{
+		if (head->push_cost < lowest_value)
+		{
+			lowest_value = head->push_cost;
+			cheapest_node = head;
+		}
+		head = head->next;
+	}
+	cheapest_node->cheapest = true;
+}
+
+void	configure_nodes(t_node *head_a, t_node *head_b)
+{
+	current_index(head_a);
+	current_index(head_b);
+	set_target(head_a, head_b);
+	push_cost(head_a, head_b);
+	lowest_cost(head_a);
 }
