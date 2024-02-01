@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 11:52:29 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:46:18 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	check_digits(char **ptr)
 static void	check_int(char **ptr)
 {
 	int	i;
-
+	
 	i = 0;
 	while (ptr[i])
 	{

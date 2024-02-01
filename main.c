@@ -24,9 +24,9 @@ int	main(int ac, char **av)
 	check_numbers(av, ac);
 	fill_stack(av, &head_a, ptr);
 	check_duplicates(&head_a);
-	if(!stack_sorted(head_a))
+	if (!stack_sorted(head_a))
 	{
-		if(stack_size(head_a) == 3)
+		if (stack_size(head_a) == 3)
 			sort_three(&head_a);
 	}
 	print_stack(head_a);

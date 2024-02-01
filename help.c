@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:41:32 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 15:11:45 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:44:39 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,31 +36,32 @@ long	ft_atol(char *str)
 	}
 	return (res * sign);
 }
-int	stack_size(t_node* head)
+
+int	stack_size(t_node *head)
 {
-	int cmp;
+	int	cmp;
 
 	cmp = 0;
-	while(head)
+	while (head)
 	{
 		head = head->next;
 		cmp++;
 	}
-	return cmp;
+	return (cmp);
 }
 
 t_node	*max_node(t_node *head)
 {
-	t_node* max;
+	t_node	*max;
 
-	if(!head)
-		return NULL;
+	if (!head)
+		return (NULL);
 	max = head;
-	while(head)
+	while (head)
 	{
-		if(head->value > max->value)
+		if (head->value > max->value)
 			max = head;
 		head = head->next;
 	}
-	return max;
+	return (max);
 }

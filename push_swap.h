@@ -49,9 +49,8 @@ void				append_beginning(t_node **head, int value);
 bool				stack_sorted(t_node *head);
 t_node				*find_tail(t_node *head);
 void				print_stack(t_node *head);
-int	stack_size(t_node* head);
-t_node* max_node(t_node* head);
-void    sort_three(t_node** head);
-
+int					stack_size(t_node *head);
+t_node				*max_node(t_node *head);
+void				sort_three(t_node **head);
 
 #endif
