@@ -6,7 +6,7 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 10:55:02 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/01 19:40:39 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/02/02 21:23:11 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ CC = cc
 CFLAGS = -fsanitize=address -g3 -Wall -Wextra -Werror
 # CFLAGS = -Wall -Wextra -Werror
 src = checks.c fill_stack.c print.c ./sorts/sort_three.c stack_utils.c main.c stack_info.c ./operations/push.c ./operations/rotate.c ./operations/reverse_rotate.c ./operations/swap.c
+src += ./sorts/configure_nodes_a.c ./sorts/configure_nodes_b.c ./sorts/move_nodes.c ./sorts/sorting_utils.c
 obj = $(src:.c=.o)
 name = push_swap
 LIB  = libft/libft.a

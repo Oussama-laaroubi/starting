@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:01:26 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 22:14:44 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/02 21:25:09 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int ac, char **av)
 			sort_three(&head_a);
 		else if(stack_size(head_a) == 2)
 			sa(&head_a);
+		else
+			start_sorting(&head_a, &head_b);
 	}
 	print_stack(head_a);
 	deallocate_stack(&head_a);

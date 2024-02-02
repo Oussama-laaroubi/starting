@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:41:32 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 18:40:49 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/02 21:35:25 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	stack_size(t_node *head)
 {
+	t_node *tmp;
 	int	cmp;
 
 	cmp = 0;
-	while (head)
+	tmp = head;
+	while (tmp)
 	{
-		head = head->next;
+		tmp = tmp->next;
 		cmp++;
 	}
 	return (cmp);
@@ -39,6 +41,21 @@ t_node	*max_node(t_node *head)
 		head = head->next;
 	}
 	return (max);
+}
+
+t_node* min_node(t_node* head)
+{
+	t_node *min;
+	if(!head)
+		return NULL;
+	min = head;
+	while (head)
+	{
+		if(head->value < min->value)
+			min = head;
+		head = head->next;
+	}
+	return min;
 }
 
 bool	stack_sorted(t_node *head)

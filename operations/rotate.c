@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:42:24 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/31 16:08:03 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:19:41 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ void	rr(t_node **head, t_node **head_b)
 	tail_b = find_tail(*head_b);
 	rotate(head, &tail);
 	rotate(head_b, &tail_b);
-	ft_printf("rr");
+	ft_printf("rr\n");
 }

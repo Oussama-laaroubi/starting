@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   configure_nodes_a.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 16:57:29 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 19:54:29 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/02 21:47:40 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	current_index(t_node *head)
 	}
 }
 
-void	set_target(t_node *head_a, t_node *head_b)
+static void	set_target_a(t_node *head_a, t_node *head_b)
 {
 	t_node	*tmp_b;
 	t_node	*target;
@@ -41,7 +41,7 @@ void	set_target(t_node *head_a, t_node *head_b)
 
 	while (head_a)
 	{
-		best_match_index = INT_MAX;
+		best_match_index = INT_MIN;
 		tmp_b = head_b;
 		while (tmp_b)
 		{
@@ -53,7 +53,7 @@ void	set_target(t_node *head_a, t_node *head_b)
 			}
 			tmp_b = tmp_b->next;
 		}
-		if (best_match_index == INT_MAX)
+		if (best_match_index == INT_MIN)
 			head_a->target = max_node(head_b);
 		else
 			head_a->target = target;
@@ -61,27 +61,29 @@ void	set_target(t_node *head_a, t_node *head_b)
 	}
 }
 
-void	push_cost(t_node *head_a, t_node *head_b)
+static void	push_cost(t_node *head_a, t_node *head_b)
 {
 	int	stack_a_size;
 	int	stack_b_size;
+	t_node *tmp_a;
 
+	tmp_a = head_a;
 	stack_a_size = stack_size(head_a);
-	stack_b_size = stack_size(head_a);
-	while (head_a)
+	stack_b_size = stack_size(head_b);
+	while (tmp_a)
 	{
-		head_a->push_cost = head_a->index;
-		if (!(head_a->above_median))
-			head_a->push_cost = stack_a_size - head_a->index;
-		if (head_a->target->above_median)
-			head_a->push_cost += head_a->target->index;
+		tmp_a->push_cost = tmp_a->index;
+		if (tmp_a->above_median == false)
+			tmp_a->push_cost = stack_a_size - (tmp_a->index);
+		if (tmp_a->target->above_median == true)
+			tmp_a->push_cost += (tmp_a->target->index);
 		else
-			head_a->push_cost += stack_b_size - head_a->target->index;
-		head_a = head_a->next;
+			tmp_a->push_cost += stack_b_size - (tmp_a->target->index);
+		tmp_a = tmp_a->next;
 	}
 }
 
-void	lowest_cost(t_node *head)
+ static void	calc_lowest_cost(t_node *head)
 {
 	t_node	*cheapest_node;
 	int		lowest_value;
@@ -101,11 +103,11 @@ void	lowest_cost(t_node *head)
 	cheapest_node->cheapest = true;
 }
 
-void	configure_nodes(t_node *head_a, t_node *head_b)
+void	configure_nodes_a(t_node *head_a, t_node *head_b)
 {
 	current_index(head_a);
 	current_index(head_b);
-	set_target(head_a, head_b);
+	set_target_a(head_a, head_b);
 	push_cost(head_a, head_b);
-	lowest_cost(head_a);
+	calc_lowest_cost(head_a);
 }
