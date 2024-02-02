@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:16:41 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 22:27:07 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/02 15:51:34 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ void    sort_l7za9(t_node** head_a, t_node** head_b)
         configure_nodes(*head_a, head_b);
         fill_back_a(head_a, head_b);
     }
+    current_index(*head_a);
+    min_on_top(head_a);
 }
