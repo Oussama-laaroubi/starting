@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 16:57:29 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/02 21:47:40 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/02 22:49:49 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	push_cost(t_node *head_a, t_node *head_b)
 		tmp_a->push_cost = tmp_a->index;
 		if (tmp_a->above_median == false)
 			tmp_a->push_cost = stack_a_size - (tmp_a->index);
-		if (tmp_a->target->above_median == true)
+		if ((tmp_a->target->above_median))
 			tmp_a->push_cost += (tmp_a->target->index);
 		else
 			tmp_a->push_cost += stack_b_size - (tmp_a->target->index);
