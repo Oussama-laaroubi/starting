@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 18:41:10 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/03 09:47:41 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ static void	check_digits(char **ptr)
 			if (!ft_isdigit(ptr[k][i]))
 			{
 				ft_putstr_fd("Error: Please enter an integer cc !!\n", 2);
+				k = 0;
+				while(ptr[k])
+				{
+					free(ptr[k]);
+					k++;
+				}
+				free(ptr);
 				exit(-1);
 			}
 			i++;
@@ -65,6 +72,7 @@ static void	check_digits(char **ptr)
 static void	check_int(char **ptr)
 {
 	int	i;
+	int	k;
 
 	i = 0;
 	while (ptr[i])
@@ -72,6 +80,13 @@ static void	check_int(char **ptr)
 		if (ft_atol(ptr[i]) > 2147483647 || ft_atol(ptr[i]) < -2147483648)
 		{
 			ft_putstr_fd("Error: Please enter an integer !!\n", 2);
+			k = 0;
+			while(ptr[k])
+			{
+				free(ptr[k]);
+				k++;
+			}
+			free(ptr);
 			exit(1);
 		}
 		i++;
@@ -92,23 +107,23 @@ void	check_duplicates(t_node **head)
 			if (next->value == tmp->value)
 			{
 				ft_putstr_fd("Error: Duplicates are not allowed !!\n", 2);
+				deallocate_stack(head);
 				exit(1);
 			}
 			next = next->next;
 		}
 		tmp = tmp->next;
 	}
-	free(tmp);
-	tmp = NULL;
-	free(next);
-	next = NULL;
 }
 
 void	check_numbers(char **av, int ac)
 {
 	char	**ptr;
 	int		arg;
+	int		k;
 
+	if (ac == 0)
+		exit (1);
 	if (ac < 2)
 	{
 		ft_putstr_fd("Invalid number of arguments !!", 2);
@@ -117,9 +132,15 @@ void	check_numbers(char **av, int ac)
 	arg = 1;
 	while (av[arg])
 	{
+		k = 0;
 		ptr = ft_split(av[arg], ' ');
 		check_int(ptr);
 		check_digits(ptr);
+		// while(ptr[k])
+		// {
+		// 	free(ptr[k]);
+		// 	k++;
+		// }
 		free(ptr);
 		arg++;
 	}
