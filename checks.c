@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/03 09:47:41 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/04 21:45:15 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	check_digits(char **ptr)
 			{
 				ft_putstr_fd("Error: Please enter an integer cc !!\n", 2);
 				k = 0;
-				while(ptr[k])
+				while (ptr[k])
 				{
 					free(ptr[k]);
 					k++;
@@ -81,7 +81,7 @@ static void	check_int(char **ptr)
 		{
 			ft_putstr_fd("Error: Please enter an integer !!\n", 2);
 			k = 0;
-			while(ptr[k])
+			while (ptr[k])
 			{
 				free(ptr[k]);
 				k++;
@@ -123,7 +123,7 @@ void	check_numbers(char **av, int ac)
 	int		k;
 
 	if (ac == 0)
-		exit (1);
+		exit(1);
 	if (ac < 2)
 	{
 		ft_putstr_fd("Invalid number of arguments !!", 2);
@@ -135,12 +135,7 @@ void	check_numbers(char **av, int ac)
 		k = 0;
 		ptr = ft_split(av[arg], ' ');
 		check_int(ptr);
-		check_digits(ptr);
-		// while(ptr[k])
-		// {
-		// 	free(ptr[k]);
-		// 	k++;
-		// }
+		check_digits(ptr);\
 		free(ptr);
 		arg++;
 	}

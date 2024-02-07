@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 20:58:37 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/02 21:08:07 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/04 17:21:16 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static void set_target(t_node* head_a, t_node* head_b)
 {
     t_node* curr_a;
     t_node *target;
-    int best_match_index;
+    long best_match_index;
 
     while(head_b)
     {
-        best_match_index = INT_MAX;
+        best_match_index = LONG_MAX;
         curr_a = head_a;
         while (curr_a)
         {
@@ -31,7 +31,7 @@ static void set_target(t_node* head_a, t_node* head_b)
             }
             curr_a = curr_a->next;
         }
-        if(best_match_index == INT_MAX)
+        if(best_match_index == LONG_MAX)
             head_b->target = min_node(head_a);
         else
             head_b->target = target;
