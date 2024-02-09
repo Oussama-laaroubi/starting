@@ -6,15 +6,15 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:37:49 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/10 00:36:50 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/10 00:38:02 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push.h"
 
-static void	swap(t_node **head)
+static void	swap(node **head)
 {
-	t_node	*tmp;
+	node	*tmp;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return ;
@@ -24,19 +24,19 @@ static void	swap(t_node **head)
 	*head = tmp;
 }
 
-void	sa(t_node **head)
+void	sa(node **head)
 {
 	swap(head);
 	ft_printf("sa\n");
 }
 
-void	sb(t_node **head_b)
+void	sb(node **head_b)
 {
 	swap(head_b);
 	ft_printf("sb\n");
 }
 
-void	ss(t_node **head, t_node **head_b)
+void	ss(node **head, node **head_b)
 {
 	swap(head);
 	swap(head_b);

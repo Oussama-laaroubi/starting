@@ -6,14 +6,14 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 23:13:39 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/10 00:01:46 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/02/10 00:51:18 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -fsanitize=address -g3 -Wall -Wextra -Werror
 # CFLAGS = -Wall -Wextra -Werror
-SRC = newmain.c stack_utils.c all_checks.c indexing.c stack_specs.c
+SRC = newmain.c stack_utils.c all_checks.c indexing.c stack_specs.c operations/swap.c operations/rotate.c
 OBJ = $(SRC:.c=.o)
 NAME = push_swap
 LIB  = ../libft/libft.a

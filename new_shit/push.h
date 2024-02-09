@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/09 23:59:19 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/10 00:51:07 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,6 @@ int						stack_size(node *head);
 node					*min_node(node *head);
 node					*max_node(node *head);
 void					ft_indexing(t_program *main);
+void	sa(node **head);
+void    ra(node** head_a);
 #endif

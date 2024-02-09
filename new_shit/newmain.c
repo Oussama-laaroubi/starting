@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:17 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/10 00:04:38 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/10 00:51:45 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,14 @@ int	main(int ac, char **av)
 		ft_error("Error");
 	if (!stack_sorted(main.head_a))
 		ft_indexing(&main);
+	// sa(&main.head_a);
+	ra(&main.head_a);
 	tmp = main.head_a;
 	while (tmp)
 	{
-		printf("value = %d and index = %d\n", tmp->value, tmp->index);
+		printf("value == %d and index == %d\n", tmp->value, tmp->index);
+		if(tmp->next)
+			printf("the next value is == %d\n-------------------------------\n", tmp->next->value);
 		tmp = tmp->next;
 	}
 	deallocate_stack(&main.head_a);
