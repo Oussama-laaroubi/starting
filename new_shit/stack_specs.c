@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_info.c                                       :+:      :+:    :+:   */
+/*   stack_specs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:41:32 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/04 17:10:16 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/09 21:15:50 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push.h"
 
-int	stack_size(t_node *head)
+int	stack_size(node *head)
 {
-	t_node	*tmp;
+	node	*tmp;
 	int		cmp;
 
 	cmp = 0;
@@ -27,9 +27,9 @@ int	stack_size(t_node *head)
 	return (cmp);
 }
 
-t_node	*max_node(t_node *head)
+node	*max_node(node *head)
 {
-	t_node	*max;
+	node	*max;
 
 	if (!head)
 		return (NULL);
@@ -43,9 +43,9 @@ t_node	*max_node(t_node *head)
 	return (max);
 }
 
-t_node	*min_node(t_node *head)
+node	*min_node(node *head)
 {
-	t_node	*min;
+	node	*min;
 
 	if (!head)
 		return (NULL);
@@ -59,18 +59,17 @@ t_node	*min_node(t_node *head)
 	return (min);
 }
 
-bool	stack_sorted(t_node *head)
+bool	stack_sorted(node *head)
 {
-	t_node	*iterator;
+	node	*iterator;
 
 	iterator = NULL;
-	if (head != NULL)
-		iterator = head->next;
-	while (iterator)
+	while (head)
 	{
-		if (iterator->value < iterator->previous->value)
+		iterator = head->next;
+		if (iterator->value < head->value)
 			return (false);
-		iterator = iterator->next;
+		head = head->next;
 	}
 	return (true);
 }

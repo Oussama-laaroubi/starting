@@ -6,29 +6,13 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/08 23:49:49 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/09 21:26:02 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-void	init(node **tail, node **head, int value)
-{
-	node	*new;
-
-	new = malloc(sizeof(node));
-	if (new == NULL)
-	{
-		exit(1);
-		return ;
-	}
-	new->value = value;
-	new->next = NULL;
-	*head = new;
-	*tail = new;
-}
-
-void	append_last(node** head, int value)
+void	append_last(node **head, int value)
 {
 	node	*new;
 	node	*tail;
@@ -39,53 +23,38 @@ void	append_last(node** head, int value)
 		exit(1);
 	new->value = value;
 	new->next = NULL;
-	if (tail != NULL)
-	{
+	new->index = DEF;
+	if (!*head)
+		(*head) = new;
+	else if (tail != NULL)
 		tail->next = new;
-	}
-	tail = new;
 }
 
-void	append_beginning(node **head, int value)
+void	deallocate_stack(node **head)
 {
-	node	*new;
+	node	*current;
+	node	*tmp;
 
-	new = malloc(sizeof(node));
-	if (new == NULL)
-	{
-		exit(1);
+	if (!head || !*head)
 		return ;
+	current = *head;
+	while (current)
+	{
+		tmp = current->next;
+		free(current);
+		current = tmp;
 	}
-	new->value = value;
-	new->next = *head;
-	*head = new;
+	head = NULL;
 }
-
-// void	deallocate_stack(node **head)
-// {
-// 	node	*curr;
-// 	node	*tail;
-
-// 	curr = *head;
-// 	tail = find_tail(*head);
-// 	if (*head == NULL)
-// 		return ;
-// 	while (curr->next)
-// 	{
-// 		curr = curr->next;
-// 		free(curr->previous);
-// 	}
-// 	free(curr);
-// 	curr = NULL;
-// 	tail = NULL;
-// 	*head = NULL;
-// }
 
 node	*find_tail(node *head)
 {
+	node	*tmp;
+
+	tmp = head;
 	if (head == NULL)
-		return (0);
-	while (head->next != NULL)
-		head = head->next;
-	return (head);
+		return (NULL);
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	return (tmp);
 }

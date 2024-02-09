@@ -37,7 +37,7 @@ static void	set_target_a(t_node *head_a, t_node *head_b)
 {
 	t_node	*tmp_b;
 	t_node	*target;
-	long		best_match_index;
+	long	best_match_index;
 
 	while (head_a)
 	{
@@ -63,9 +63,9 @@ static void	set_target_a(t_node *head_a, t_node *head_b)
 
 static void	push_cost(t_node *head_a, t_node *head_b)
 {
-	int	stack_a_size;
-	int	stack_b_size;
-	t_node *tmp_a;
+	int		stack_a_size;
+	int		stack_b_size;
+	t_node	*tmp_a;
 
 	tmp_a = head_a;
 	stack_a_size = stack_size(head_a);
@@ -83,7 +83,7 @@ static void	push_cost(t_node *head_a, t_node *head_b)
 	}
 }
 
- static void	calc_lowest_cost(t_node *head)
+static void	calc_lowest_cost(t_node *head)
 {
 	t_node	*cheapest_node;
 	int		lowest_value;

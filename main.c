@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 	{
 		if (stack_size(head_a) == 3)
 			sort_three(&head_a);
-		else if(stack_size(head_a) == 2)
+		else if (stack_size(head_a) == 2)
 			sa(&head_a);
 		else
 			start_sorting(&head_a, &head_b);

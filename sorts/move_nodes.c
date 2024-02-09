@@ -20,7 +20,7 @@ static void	fill_stack_b(t_node **head_a, t_node **head_b)
 	if (lowest_node->above_median && lowest_node->target->above_median)
 		rotate_both(head_a, head_b, lowest_node);
 	else if (!(lowest_node->above_median)
-		&& !(lowest_node->target->above_median))
+			&& !(lowest_node->target->above_median))
 		r_rotate_both(head_a, head_b, lowest_node);
 	adjust_top(head_a, lowest_node, 'a');
 	adjust_top(head_b, lowest_node->target, 'b');
@@ -32,7 +32,7 @@ static void	fill_back_a(t_node **head_a, t_node **head_b)
 	adjust_top(head_a, (*head_b)->target, 'a');
 	pa(head_a, head_b);
 }
- 
+
 static void	refresh_a(t_node **head_a)
 {
 	while ((*head_a)->value != min_node(*head_a)->value)

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   all_checks.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 19:38:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/04 21:45:15 by olaaroub         ###   ########.fr       */
+/*   Created: 2024/02/09 18:22:37 by olaaroub          #+#    #+#             */
+/*   Updated: 2024/02/09 23:58:57 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push.h"
 
 static long	ft_atol(char *str)
 {
@@ -37,7 +37,7 @@ static long	ft_atol(char *str)
 	return (res * sign);
 }
 
-static void	check_digits(char **ptr)
+static int	check_digits(char **ptr)
 {
 	int	k;
 	int	i;
@@ -52,24 +52,19 @@ static void	check_digits(char **ptr)
 		{
 			if (!ft_isdigit(ptr[k][i]))
 			{
-				ft_putstr_fd("Error: Please enter an integer cc !!\n", 2);
-				k = 0;
-				while (ptr[k])
-				{
-					free(ptr[k]);
-					k++;
-				}
+				free(ptr[k]);
 				free(ptr);
-				exit(-1);
+				return (0);
 			}
 			i++;
 		}
 		free(ptr[k]);
 		k++;
 	}
+	return (1);
 }
 
-static void	check_int(char **ptr)
+static int	check_int(char **ptr)
 {
 	int	i;
 	int	k;
@@ -79,7 +74,6 @@ static void	check_int(char **ptr)
 	{
 		if (ft_atol(ptr[i]) > 2147483647 || ft_atol(ptr[i]) < -2147483648)
 		{
-			ft_putstr_fd("Error: Please enter an integer !!\n", 2);
 			k = 0;
 			while (ptr[k])
 			{
@@ -87,16 +81,17 @@ static void	check_int(char **ptr)
 				k++;
 			}
 			free(ptr);
-			exit(1);
+			return (0);
 		}
 		i++;
 	}
+	return (1);
 }
 
-void	check_duplicates(t_node **head)
+int	check_duplicates(node **head)
 {
-	t_node	*tmp;
-	t_node	*next;
+	node	*tmp;
+	node	*next;
 
 	tmp = *head;
 	while (tmp)
@@ -106,37 +101,45 @@ void	check_duplicates(t_node **head)
 		{
 			if (next->value == tmp->value)
 			{
-				ft_putstr_fd("Error: Duplicates are not allowed !!\n", 2);
 				deallocate_stack(head);
-				exit(1);
+				return (0);
 			}
 			next = next->next;
 		}
 		tmp = tmp->next;
 	}
+	return (1);
 }
 
-void	check_numbers(char **av, int ac)
+int	check_args(char **av, int ac)
 {
 	char	**ptr;
 	int		arg;
-	int		k;
 
-	if (ac == 0)
-		exit(1);
 	if (ac < 2)
-	{
-		ft_putstr_fd("Invalid number of arguments !!", 2);
-		exit(1);
-	}
+		return (0);
 	arg = 1;
 	while (av[arg])
 	{
-		k = 0;
 		ptr = ft_split(av[arg], ' ');
-		check_int(ptr);
-		check_digits(ptr);
+		if (!ptr || !ptr[0])
+		{
+			free(ptr);
+			return (0);
+		}
+		if (!check_int(ptr))
+			return (0);
+		if (!check_digits(ptr))
+			return (0);
 		free(ptr);
 		arg++;
 	}
+	return (1);
+}
+
+void	ft_error(char *error)
+{
+	write(2, error, ft_strlen(error));
+	write(2, "\n", 1);
+	exit(1);
 }

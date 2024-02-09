@@ -34,19 +34,22 @@ typedef struct s_node
 }					t_node;
 // algoo
 
-void current_index(t_node *head);
-void rotate_both(t_node **head_a, t_node **head_b, t_node *lowes_cost);
-void r_rotate_both(t_node **head_a, t_node **head_b, t_node *lowest_node);
-void start_sorting(t_node **head_a, t_node **head_b);
-t_node* lowest_cost(t_node *head);
-void configure_nodes_a(t_node *head_a, t_node *head_b);
-void configure_nodes_b(t_node *head_a, t_node *head_b);
-void adjust_top(t_node **head, t_node *lowest_node, char stack_name);
-t_node *min_node(t_node *head);
+void				current_index(t_node *head);
+void				rotate_both(t_node **head_a, t_node **head_b,
+						t_node *lowes_cost);
+void				r_rotate_both(t_node **head_a, t_node **head_b,
+						t_node *lowest_node);
+void				start_sorting(t_node **head_a, t_node **head_b);
+t_node				*lowest_cost(t_node *head);
+void				configure_nodes_a(t_node *head_a, t_node *head_b);
+void				configure_nodes_b(t_node *head_a, t_node *head_b);
+void				adjust_top(t_node **head, t_node *lowest_node,
+						char stack_name);
+t_node				*min_node(t_node *head);
 
 //algoo
-t_node *min_node(t_node *head);
-void fill_stack(char **av, t_node **head, char **ptr);
+t_node				*min_node(t_node *head);
+void				fill_stack(char **av, t_node **head, char **ptr);
 void				init(t_node **tail, t_node **head, int value);
 void				append_last(t_node **tail, int value);
 void				deallocate_stack(t_node **head);
