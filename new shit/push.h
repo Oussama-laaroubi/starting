@@ -6,25 +6,36 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/08 18:24:38 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:50:07 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_H
 #define PUSH_H
 
-typedef struct s_node
+#include "stdbool.h"
+#include "../libft/libft.h"
+#include "../ft_printf/ft_printf.h"
+
+typedef struct struct_node
 {
     int value;
-    struct s_node *next;
-}   t_node;
+    struct struct_node *next;
+}   node;
 
 typedef struct s_program
 {
-    t_node *head_a;
-    t_node *head_b;
+    node *head_a;
+    node *head_b;
     int stack_b_size;
     int stack_a_size;
+    bool    filled;
+    char** av;
+    int ac;
 }   t_program;
+
+void	append_last(node** head, int value);
+node	*find_tail(node *head);
+
 
 #endif
