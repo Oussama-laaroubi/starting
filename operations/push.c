@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:59:48 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/07 14:22:57 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/10 02:24:53 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,16 @@ static void	push_a(t_node **head_a, t_node **head_b)
 
 void	pa(t_node **head_a, t_node **head_b)
 {
+	if(!*head_b || !head_b)
+		return;
 	push_a(head_a, head_b);
 	ft_printf("pa\n");
 }
 
 void	pb(t_node **head_b, t_node **head_a)
 {
+	if(!*head_a || !head_a)
+		return;
 	push_b(head_b, head_a);
 	ft_printf("pb\n");
 }

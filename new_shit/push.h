@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/10 00:51:07 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/10 02:00:04 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,7 @@ node					*max_node(node *head);
 void					ft_indexing(t_program *main);
 void	sa(node **head);
 void    ra(node** head_a);
+void    pa(node** head_a, node** head_b);
+void    pb(node** head_a, node** head_b);
+void    rra(node** head_a);
 #endif

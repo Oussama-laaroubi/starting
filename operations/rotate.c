@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:42:24 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/02 18:19:41 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/10 02:25:51 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	ra(t_node **head)
 {
 	t_node	*tail;
 
+	if(!*head || !head)
+		return;
 	tail = find_tail(*head);
 	rotate(head, &tail);
 	ft_printf("ra\n");
@@ -39,7 +41,8 @@ void	ra(t_node **head)
 void	rb(t_node **head_b)
 {
 	t_node	*tail_b;
-
+	if(!*head_b || !head_b)
+		return;
 	tail_b = find_tail(*head_b);
 	rotate(head_b, &tail_b);
 	ft_printf("rb\n");
@@ -49,7 +52,8 @@ void	rr(t_node **head, t_node **head_b)
 {
 	t_node	*tail;
 	t_node	*tail_b;
-
+	if(!(*head) || !(*head_b) || !head || !head_b)
+		return;
 	tail = find_tail(*head);
 	tail_b = find_tail(*head_b);
 	rotate(head, &tail);
