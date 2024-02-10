@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/10 02:00:04 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:50:33 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,14 @@ int						stack_size(node *head);
 node					*min_node(node *head);
 node					*max_node(node *head);
 void					ft_indexing(t_program *main);
-void	sa(node **head);
-void    ra(node** head_a);
-void    pa(node** head_a, node** head_b);
-void    pb(node** head_a, node** head_b);
-void    rra(node** head_a);
+void					sa(node **head);
+void					ra(node **head_a);
+void					pa(node **head_a, node **head_b);
+void					pb(node **head_a, node **head_b);
+void					rra(node **head_a);
+void					rrb(node **head_b);
+void					rb(node **head_b);
+void					rr(node **head_a, node **head_b);
+void					rrr(node **head_a, node **head_b);
+
 #endif

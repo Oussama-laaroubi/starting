@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:17 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/10 02:04:59 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:56:29 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,11 @@ int	main(int ac, char **av)
 		ft_error("Error");
 	if (!stack_sorted(main.head_a))
 		ft_indexing(&main);
-	// sa(&main.head_a);
-	// ra(&main.head_a);
-	// rra(&main.head_a);
 	pb(&main.head_a, &main.head_b);
 	pb(&main.head_a, &main.head_b);
-	pb(&main.head_a, &main.head_b);
-	pb(&main.head_a, &main.head_b);
-	pb(&main.head_a, &main.head_b);
-	pb(&main.head_a, &main.head_b);
+	rr(&main.head_a, &main.head_b);
+	pa(&main.head_a, &main.head_b);
+	pa(&main.head_a, &main.head_b);
 	tmp = main.head_a;
 	while (tmp)
 	{
@@ -98,6 +94,6 @@ int	main(int ac, char **av)
 		tmp = tmp->next;
 	}
 	deallocate_stack(&main.head_a);
-	deallocate_stack(&main.head_b);
-
+	// deallocate_stack(&main.head_b);
+	system("leaks push_swap");
 }
