@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:23:40 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/11 16:39:51 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:40:42 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void start_sorting(t_program* main)
 	{
 		set_targets(main);
 		set_cost(main);
+		// printf("\n\n=====IM HERE=====\n\n");
 		find_best_move(main);
 	}
 	if(!stack_sorted(main->head_a))

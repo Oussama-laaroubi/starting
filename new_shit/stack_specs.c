@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:41:32 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/11 11:43:51 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:40:09 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,9 @@ bool	stack_sorted(node *head)
 	iterator = NULL;
 	while (head)
 	{
-		iterator = head->next;
-		if (iterator->value < head->value)
+		if(head->next)
+			iterator = head->next;
+		if (iterator && iterator->value < head->value)
 			return (false);
 		head = head->next;
 	}

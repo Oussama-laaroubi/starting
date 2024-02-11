@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:17 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/11 16:42:13 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:43:04 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,10 +105,10 @@ int	main(int ac, char **av)
 	// 				tmp2->next->value);
 	// 	tmp2 = tmp2->next;
 	// }
-	if(!stack_sorted(main.head_a))
-		printf("\n\n========stack is NOY sorted==========\n\n");
-	else
-		printf("\n\n========stack is sorted==========\n\n");
+	// if(!stack_sorted(main.head_a))
+	// 	printf("\n\n========stack is NOY sorted==========\n\n");
+	// else
+	// 	printf("\n\n========stack is sorted==========\n\n");
 
 	deallocate_stack(&main.head_a);
 	// deallocate_stack(&main.head_b);

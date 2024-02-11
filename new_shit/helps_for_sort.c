@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:30:25 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/11 16:37:45 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:38:00 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	set_cost(t_program* main)
 		current_b->target_cost = current_b->target_position;
 		if((size_t)current_b->target_position > main->stack_a_size / 2)
 			current_b->target_cost = (main->stack_a_size - current_b->target_position) * -1;
-		current_b = current_a->next;
+		current_b = current_b->next;
 	}
 }
 
