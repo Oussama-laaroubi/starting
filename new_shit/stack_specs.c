@@ -6,16 +6,16 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:41:32 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/09 21:15:50 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/11 11:43:51 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-int	stack_size(node *head)
+size_t	stack_size(node *head)
 {
 	node	*tmp;
-	int		cmp;
+	size_t		cmp;
 
 	cmp = 0;
 	tmp = head;

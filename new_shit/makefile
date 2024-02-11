@@ -6,14 +6,14 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 23:13:39 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/10 18:55:41 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/02/11 16:33:42 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-# CFLAGS = -fsanitize=address -g3 -Wall -Wextra -Werror
-CFLAGS = -Wall -Wextra -Werror
-SRC = newmain.c stack_utils.c all_checks.c indexing.c stack_specs.c operations/swap.c operations/rotate.c
+CFLAGS = -fsanitize=address -g3 -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
+SRC = newmain.c stack_utils.c all_checks.c indexing.c sort_stack.c helps_for_sort.c start_sorting.c stack_specs.c operations/swap.c operations/rotate.c
 SRC += operations/reverse_rotate.c operations/push.c
 OBJ = $(SRC:.c=.o)
 NAME = push_swap

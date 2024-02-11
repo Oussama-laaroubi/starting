@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:24:14 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/01/28 18:06:54 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/11 15:00:13 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
+int					ft_abs(int n);
 void				ft_bzero(void *s, size_t n);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);

@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 00:45:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/10 18:48:10 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/11 15:39:21 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ void    rb(node** head_b)
     ft_printf("rb\n");
 }
 
-void    rr(node** head_a, node** head_b)
+void    rr(t_program* main)
 {
-    if(!*head_a || !*head_a)
+    if(!main->head_b || !main->head_a)
         return;
-    rotate(head_a);
-    rotate(head_b);
+    rotate(&main->head_a);
+    rotate(&main->head_b);
     ft_printf("rr\n");
 }

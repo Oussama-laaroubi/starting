@@ -6,48 +6,53 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:51:08 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/10 02:05:55 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/11 12:06:10 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push.h"
 
-static void push_b(node** head_a, node** head_b)
+static void push_b(t_program* main)
 {
     node* tmp;
 
-    if(!*head_a)
+    if(!main->head_a)
         return;
-    tmp = (*head_a)->next;
-    (*head_a)->next = (*head_b);
-    (*head_b) = (*head_a);
-    (*head_a) = tmp;
+    tmp = main->head_a->next;
+    main->head_a->next = main->head_b;
+    main->head_b = main->head_a;
+    main->head_a = tmp;
+
 }
 
-static void push_a(node** head_a, node** head_b)
+static void push_a(t_program* main)
 {
     node* tmp;
 
-    if(!*head_b)
+    if(!main->head_b)
         return;
-    tmp = (*head_b)->next;
-    (*head_b)->next = (*head_a);
-    (*head_a) = (*head_b);
-    (*head_b) = tmp;
+    tmp = main->head_b->next;
+    main->head_b->next = main->head_a;
+    main->head_a = main->head_b;
+    main->head_b = tmp;
 }
 
-void    pa(node** head_a, node** head_b)
+void    pa(t_program* main)
 {
-    if(!*head_b)
+    if(!main->head_b)
         return;
-    push_a(head_a, head_b);
+    push_a(main);
+    main->stack_b_size--;
+    main->stack_a_size++;
     ft_printf("pa\n");
 }
 
-void    pb(node** head_a, node** head_b)
+void    pb(t_program* main)
 {
-    if(!*head_a)
+    if(!main->head_a)
         return;
-    push_b(head_a, head_b);
+    push_b(main);
+    main->stack_a_size--;
+    main->stack_b_size++;
     ft_printf("pb\n");
 }
