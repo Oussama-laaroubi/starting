@@ -6,12 +6,12 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 19:06:44 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:29:17 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_H
-# define PUSH_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include "../../ft_printf/ft_printf.h"
 # include "../../libft/libft.h"
@@ -29,12 +29,12 @@ typedef struct struct_node
 	int					cost;
 	int					target_cost;
 	struct struct_node	*next;
-}						node;
+}						t_node;
 
 typedef struct s_program
 {
-	node				*head_a;
-	node				*head_b;
+	t_node				*head_a;
+	t_node				*head_b;
 	size_t				stack_b_size;
 	size_t				stack_a_size;
 }						t_program;
@@ -46,40 +46,40 @@ struct					s_lowest_cost
 	int					cost_at_a;
 };
 
-node					*max_node(node *head);
-node					*find_tail(node *head);
-node					*min_node(node *head);
+t_node					*max_node(t_node *head);
+t_node					*find_tail(t_node *head);
+t_node					*min_node(t_node *head);
 int						check_args(char **av, int ac);
-int						check_duplicates(node **head);
-size_t					stack_size(node *head);
-bool					stack_sorted(node *head);
-void					append_last(node **head, int value);
+int						check_duplicates(t_node **head);
+size_t					stack_size(t_node *head);
+bool					stack_sorted(t_node *head);
+void					append_last(t_node **head, int value);
 void					ft_error(char *error);
-void					deallocate_stack(node **head);
+void					deallocate_stack(t_node **head);
 
-void					sa(node **head);
-void					ra(node **head_a);
+void					sa(t_node **head);
+void					ra(t_node **head_a);
 void					pa(t_program *main);
 void					pb(t_program *main);
-void					rra(node **head_a);
-void					rrb(node **head_b);
-void					rb(node **head_b);
+void					rra(t_node **head_a);
+void					rrb(t_node **head_b);
+void					rb(t_node **head_b);
 void					rr(t_program *main);
 void					rrr(t_program *main);
 
 void					ft_indexing(t_program *main);
 void					sort_stack(t_program *main);
-void					sort_three(node **head_a);
+void					sort_three(t_node **head_a);
 
 void					start_sorting(t_program *main);
-void					set_positions(node *head);
+void					set_positions(t_node *head);
 int						get_target_position(t_program *main, int index,
 							int closest, int target_position);
 void					set_cost(t_program *main);
 void					single_rotate_a(t_program *main, int *cost_at_a);
 void					single_rotate_b(t_program *main, int *cost_at_b);
 void					execute_move(struct s_lowest_cost best_move);
-void					get_min_node_position(node *head_a,
+void					get_min_node_position(t_node *head_a,
 							int *min_node_position);
 
 #endif

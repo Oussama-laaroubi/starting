@@ -6,18 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:22:37 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 19:07:02 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:20:43 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	ft_error(char *error)
-{
-	write(2, error, ft_strlen(error));
-	write(2, "\n", 1);
-	exit(1);
-}
 
 static long	ft_atol(char *str)
 {
@@ -99,10 +92,10 @@ static int	check_int(char **ptr)
 	return (1);
 }
 
-int	check_duplicates(node **head)
+int	check_duplicates(t_node **head)
 {
-	node	*tmp;
-	node	*next;
+	t_node	*tmp;
+	t_node	*next;
 
 	tmp = *head;
 	while (tmp)

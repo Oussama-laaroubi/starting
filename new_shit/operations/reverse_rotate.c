@@ -6,16 +6,16 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:41:57 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 19:09:25 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:29:59 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	reverse_rotate(node **head)
+static void	reverse_rotate(t_node **head)
 {
-	node	*tmp;
-	node	*tail;
+	t_node	*tmp;
+	t_node	*tail;
 
 	if (!(*head))
 		return ;
@@ -28,7 +28,7 @@ static void	reverse_rotate(node **head)
 	*head = tail;
 }
 
-void	rra(node **head_a)
+void	rra(t_node **head_a)
 {
 	if (!*head_a)
 		return ;
@@ -36,7 +36,7 @@ void	rra(node **head_a)
 	ft_printf("rra\n");
 }
 
-void	rrb(node **head_b)
+void	rrb(t_node **head_b)
 {
 	if (!*head_b)
 		return ;
@@ -44,11 +44,11 @@ void	rrb(node **head_b)
 	ft_printf("rrb\n");
 }
 
-void    rrr(t_program* main)
+void	rrr(t_program *main)
 {
-    if(!main->head_a || !main->head_b)
-        return;
-    reverse_rotate(&main->head_a);
-    reverse_rotate(&main->head_b);
-    ft_printf("rrr\n");
+	if (!main->head_a || !main->head_b)
+		return ;
+	reverse_rotate(&main->head_a);
+	reverse_rotate(&main->head_b);
+	ft_printf("rrr\n");
 }

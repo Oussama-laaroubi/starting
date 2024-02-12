@@ -6,13 +6,13 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 11:20:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 19:08:29 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:35:05 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_three(node **head_a)
+void	sort_three(t_node **head_a)
 {
 	if (*head_a == max_node(*head_a))
 		ra(head_a);

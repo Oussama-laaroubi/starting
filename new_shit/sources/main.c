@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:17 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 19:08:24 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:34:23 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	ft_fill_stack(t_program *main, char **av)
 	main->head_b = NULL;
 }
 
-static void	ft_fill_args_is_2(t_program *main, char *av)
+static void	ft_fill_args(t_program *main, char *av)
 {
 	char	**ptr;
 	int		k;

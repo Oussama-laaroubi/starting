@@ -6,30 +6,16 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:30:25 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 19:08:08 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:31:36 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	set_positions(node *head)
-{
-	node	*curr;
-	int		position;
-
-	position = 0;
-	curr = head;
-	while (curr)
-	{
-		curr->position = position++;
-		curr = curr->next;
-	}
-}
-
 int	get_target_position(t_program *main, int index, int closest,
 		int target_position)
 {
-	node	*current;
+	t_node	*current;
 
 	current = main->head_a;
 	while (current)
@@ -55,27 +41,6 @@ int	get_target_position(t_program *main, int index, int closest,
 	}
 	return (target_position);
 }
-
-void	set_cost(t_program *main)
-{
-	node	*current_a;
-	node	*current_b;
-
-	current_a = main->head_a;
-	current_b = main->head_b;
-	while (current_b)
-	{
-		current_b->cost = current_b->position;
-		if ((size_t)current_b->position > main->stack_b_size / 2)
-			current_b->cost = (main->stack_b_size - current_b->position) * -1;
-		current_b->target_cost = current_b->target_position;
-		if ((size_t)current_b->target_position > main->stack_a_size / 2)
-			current_b->target_cost = (main->stack_a_size
-					- current_b->target_position) * -1;
-		current_b = current_b->next;
-	}
-}
-
 
 void	execute_move(struct s_lowest_cost best_move)
 {
@@ -136,9 +101,9 @@ void	single_rotate_b(t_program *main, int *cost_at_b)
 	}
 }
 
-void	get_min_node_position(node *head_a, int *min_node_position)
+void	get_min_node_position(t_node *head_a, int *min_node_position)
 {
-	node	*current;
+	t_node	*current;
 	int		least_rank;
 
 	least_rank = INT_MAX;

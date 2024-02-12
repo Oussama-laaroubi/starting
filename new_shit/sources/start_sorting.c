@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:23:40 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 19:04:51 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:31:08 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	push_b_util_three(t_program *main, size_t size)
 
 static void	set_targets(t_program *main)
 {
-	node	*current;
+	t_node	*current;
 	int		target_position;
 
 	set_positions(main->head_a);
@@ -57,7 +57,7 @@ static void	set_targets(t_program *main)
 static void	find_best_move(t_program *main)
 {
 	struct s_lowest_cost	best_move;
-	node					*current;
+	t_node					*current;
 	int						lowest_cost;
 
 	lowest_cost = INT_MAX;
@@ -76,7 +76,7 @@ static void	find_best_move(t_program *main)
 	execute_move(best_move);
 }
 
-static void	rotate_until_min_is_top(t_program *main, node *head_a,
+static void	rotate_until_min_is_top(t_program *main, t_node *head_a,
 		size_t stack_a_size)
 {
 	int	min_node_position;
@@ -85,17 +85,21 @@ static void	rotate_until_min_is_top(t_program *main, node *head_a,
 	min_node_position = INT_MAX;
 	get_min_node_position(head_a, &min_node_position);
 	if ((size_t)min_node_position > stack_a_size / 2)
+	{
 		while ((size_t)min_node_position < stack_a_size)
 		{
 			min_node_position++;
 			rra(&main->head_a);
 		}
+	}
 	else
+	{
 		while (min_node_position)
 		{
 			min_node_position--;
 			ra(&main->head_a);
 		}
+	}
 }
 
 void	start_sorting(t_program *main)

@@ -6,19 +6,26 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 19:08:35 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:21:11 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	append_last(node **head, int value)
+void	ft_error(char *error)
 {
-	node	*new;
-	node	*tail;
+	write(2, error, ft_strlen(error));
+	write(2, "\n", 1);
+	exit(1);
+}
+
+void	append_last(t_node **head, int value)
+{
+	t_node	*new;
+	t_node	*tail;
 
 	tail = find_tail(*head);
-	new = malloc(sizeof(node));
+	new = malloc(sizeof(t_node));
 	if (new == NULL)
 		exit(1);
 	new->value = value;
@@ -30,10 +37,10 @@ void	append_last(node **head, int value)
 		tail->next = new;
 }
 
-void	deallocate_stack(node **head)
+void	deallocate_stack(t_node **head)
 {
-	node	*current;
-	node	*tmp;
+	t_node	*current;
+	t_node	*tmp;
 
 	if (!head || !*head)
 		return ;
@@ -47,9 +54,9 @@ void	deallocate_stack(node **head)
 	head = NULL;
 }
 
-node	*find_tail(node *head)
+t_node	*find_tail(t_node *head)
 {
-	node	*tmp;
+	t_node	*tmp;
 
 	tmp = head;
 	if (head == NULL)

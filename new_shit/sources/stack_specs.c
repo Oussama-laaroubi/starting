@@ -6,15 +6,15 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:41:32 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 19:04:41 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:26:51 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-size_t	stack_size(node *head)
+size_t	stack_size(t_node *head)
 {
-	node	*tmp;
+	t_node	*tmp;
 	size_t	cmp;
 
 	cmp = 0;
@@ -27,9 +27,9 @@ size_t	stack_size(node *head)
 	return (cmp);
 }
 
-node	*max_node(node *head)
+t_node	*max_node(t_node *head)
 {
-	node	*max;
+	t_node	*max;
 
 	if (!head)
 		return (NULL);
@@ -43,9 +43,9 @@ node	*max_node(node *head)
 	return (max);
 }
 
-node	*min_node(node *head)
+t_node	*min_node(t_node *head)
 {
-	node	*min;
+	t_node	*min;
 
 	if (!head)
 		return (NULL);
@@ -59,9 +59,9 @@ node	*min_node(node *head)
 	return (min);
 }
 
-bool	stack_sorted(node *head)
+bool	stack_sorted(t_node *head)
 {
-	node	*iterator;
+	t_node	*iterator;
 
 	iterator = NULL;
 	while (head)
