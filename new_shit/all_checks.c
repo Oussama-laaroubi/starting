@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:22:37 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/11 23:51:24 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:10:37 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static int	check_digits(char **ptr)
 	int	i;
 
 	k = 0;
-	if(!*ptr || !ptr[0][0])
-		return 0;
+	if (!*ptr || !ptr[0][0])
+		return (0);
 	while (ptr[k])
 	{
 		i = 0;
@@ -72,8 +72,8 @@ static int	check_int(char **ptr)
 	int	k;
 
 	i = 0;
-	if(!*ptr || !ptr[0][0])
-		return 0;
+	if (!*ptr || !ptr[0][0])
+		return (0);
 	while (ptr[i])
 	{
 		if (ft_atol(ptr[i]) > 2147483647 || ft_atol(ptr[i]) < -2147483648)
@@ -126,7 +126,7 @@ int	check_args(char **av, int ac)
 	while (av[arg])
 	{
 		ptr = ft_split(av[arg], ' ');
-		if (!ptr[0] || !ptr[0][0] || !ft_isdigit(ptr[0][0]))
+		if (!ptr[0] || !ptr[0][0])
 		{
 			free(ptr);
 			return (0);

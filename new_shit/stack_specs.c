@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:41:32 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/11 19:40:09 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:12:20 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	stack_size(node *head)
 {
 	node	*tmp;
-	size_t		cmp;
+	size_t	cmp;
 
 	cmp = 0;
 	tmp = head;
@@ -66,7 +66,7 @@ bool	stack_sorted(node *head)
 	iterator = NULL;
 	while (head)
 	{
-		if(head->next)
+		if (head->next)
 			iterator = head->next;
 		if (iterator && iterator->value < head->value)
 			return (false);
