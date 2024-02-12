@@ -6,11 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:23:40 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 18:11:53 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:04:51 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push.h"
+#include "../includes/push_swap.h"
 
 static void	push_b_util_three(t_program *main, size_t size)
 {

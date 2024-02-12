@@ -6,11 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:41:57 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/11 15:35:59 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:09:25 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push.h"
+#include "../includes/push_swap.h"
 
 static void	reverse_rotate(node **head)
 {

@@ -6,11 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:37:49 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/10 00:38:02 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:09:45 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push.h"
+#include "../includes/push_swap.h"
 
 static void	swap(node **head)
 {

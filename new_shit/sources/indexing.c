@@ -6,11 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 21:20:06 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/09 23:59:51 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:08:19 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push.h"
+#include "../includes/push_swap.h"
 
 static node	*lowest_node(node *head)
 {

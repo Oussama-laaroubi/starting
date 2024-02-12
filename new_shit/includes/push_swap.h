@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.h                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 17:38:09 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:06:44 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_H
 # define PUSH_H
 
-# include "../ft_printf/ft_printf.h"
-# include "../libft/libft.h"
+# include "../../ft_printf/ft_printf.h"
+# include "../../libft/libft.h"
 # include "limits.h"
 # include "stdbool.h"
 
