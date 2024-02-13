@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:23:40 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 20:31:08 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:24:49 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	find_best_move(t_program *main)
 	current = main->head_b;
 	while (current)
 	{
-		if (ft_abs(current->cost) + ft_abs(current->target_cost) < lowest_cost)
+		if (ft_abs(current->cost) + ft_abs(current->target_cost) < ft_abs(lowest_cost))
 		{
 			lowest_cost = ft_abs(current->cost) + ft_abs(current->target_cost);
 			best_move.cost_at_a = current->target_cost;

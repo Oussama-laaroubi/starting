@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 00:45:47 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 20:30:08 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:48:37 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static void	rotate(t_node **head)
 	t_node	*tmp;
 	t_node	*tail;
 
-	if (!*head)
-		return ;
 	tail = find_tail(*head);
 	tmp = (*head)->next;
 	(*head)->next = NULL;
@@ -28,25 +26,19 @@ static void	rotate(t_node **head)
 
 void	ra(t_node **head_a)
 {
-	if (!*head_a)
-		return ;
 	rotate(head_a);
-	ft_printf("ra\n");
+	write(1, "ra\n", 3);
 }
 
 void	rb(t_node **head_b)
 {
-	if (!*head_b)
-		return ;
 	rotate(head_b);
-	ft_printf("rb\n");
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_program *main)
 {
-	if (!main->head_b || !main->head_a)
-		return ;
 	rotate(&main->head_a);
 	rotate(&main->head_b);
-	ft_printf("rr\n");
+	write(1, "rr\n", 3);
 }

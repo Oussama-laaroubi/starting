@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 21:20:06 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 20:23:34 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:06:17 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static t_node	*lowest_node(t_node *head)
 	t_node	*min;
 	int		lowest_val;
 
-	if (!head)
-		return (NULL);
 	min = NULL;
 	lowest_val = INT_MAX;
 	while (head)

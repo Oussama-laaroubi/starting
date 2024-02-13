@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:37:49 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/12 20:30:18 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:49:24 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ static void	swap(t_node **head)
 {
 	t_node	*tmp;
 
-	if (*head == NULL || (*head)->next == NULL)
-		return ;
 	tmp = (*head)->next;
 	(*head)->next = tmp->next;
 	tmp->next = *head;
@@ -27,18 +25,18 @@ static void	swap(t_node **head)
 void	sa(t_node **head)
 {
 	swap(head);
-	ft_printf("sa\n");
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_node **head_b)
 {
 	swap(head_b);
-	ft_printf("sb\n");
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_node **head, t_node **head_b)
 {
 	swap(head);
 	swap(head_b);
-	ft_printf("ss\n");
+	write(1, "ss\n", 3);
 }
