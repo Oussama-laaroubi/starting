@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:23:40 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/13 15:24:49 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:52:45 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ static void	set_targets(t_program *main)
 	t_node	*current;
 	int		target_position;
 
+	current = main->head_b;
 	set_positions(main->head_a);
 	set_positions(main->head_b);
 	target_position = 0;
-	current = main->head_b;
 	while (current)
 	{
 		target_position = get_target_position(main, current->index, INT_MAX,
