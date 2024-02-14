@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:17 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/13 16:53:28 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/14 23:23:17 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,12 @@ int	main(int ac, char **av)
 		ft_indexing(&main);
 		sort_stack(&main);
 	}
+	t_node *tmpp = main.head_a;
+	while (tmpp)
+	{
+		ft_printf("=== %d ===\n", tmpp->value);
+		tmpp = tmpp->next;
+	}
+
 	deallocate_stack(&main.head_a);
 }

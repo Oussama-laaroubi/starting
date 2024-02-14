@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:22:37 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/14 18:52:24 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/14 23:07:59 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	check_digits(char **ptr)
 	while (ptr[k])
 	{
 		i = 0;
-		if (ptr[k][0] == '-')
+		if ((ptr[k][0] == '-' && ft_isdigit(ptr[k][1])) || (ptr[k][0] == '+' && ft_isdigit(ptr[k][1])))
 			i = 1;
 		while (ptr[k][i])
 		{

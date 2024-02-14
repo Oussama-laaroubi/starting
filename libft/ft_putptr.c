@@ -6,11 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 18:40:42 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/01 15:45:30 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/14 22:31:49 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_putptr(void *p, char c)
 {

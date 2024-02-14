@@ -6,11 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 18:24:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/14 16:31:31 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/14 22:31:24 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_putptr_base(unsigned long n, int base, char c)
 {

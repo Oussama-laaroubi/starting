@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   read_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 18:21:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/14 16:25:42 by olaaroub         ###   ########.fr       */
+/*   Created: 2024/02/14 22:47:07 by olaaroub          #+#    #+#             */
+/*   Updated: 2024/02/14 23:18:26 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "./includes/push_swap.h"
 
-# include <stdarg.h>
-# include <unistd.h>
+int  main()
+{
+    char *ptr;
 
-int	ft_printf(const char *placeholder, ...);
-int	ft_placeholder(char placeholder, va_list args);
-int	ft_putnbr_base(long n, int base, char c);
-int	ft_putptr(void *p, char c);
-int	ft_putstr(char *str);
-int	ft_putchar(int c);
-int	ft_putptr_base(unsigned long n, int base, char c);
-
-#endif
+    ptr = get_next_line(0);
+    while (ptr)
+    {
+        ft_printf("%s", ptr);
+        free(ptr);
+        ptr = get_next_line(0);
+    }
+}
