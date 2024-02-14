@@ -6,7 +6,7 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 11:35:23 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/11 15:00:22 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/02/14 16:24:16 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,11 @@ SRCS += ft_isdigit.c ft_isprint.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strnc
 SRCS += ft_memcpy.c ft_memmove.c ft_strchr.c ft_strrchr.c ft_memchr.c ft_memcmp.c ft_atoi.c ft_abs.c
 SRCS += ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c ft_split.c ft_strmapi.c ft_striteri.c
 SRCS += ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putchar_fd.c ft_calloc.c ft_strdup.c
+SRCS += ft_printf.c ft_putchar.c ft_putstr.c ft_putptr.c ft_putnbr_base.c ft_placeholder.c ft_putptr_base.c
 OBJ = $(SRCS:.c=.o)
+
 #BONUS PART
+
 B_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c
 B_SRCS += ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c
 B_OBJ = $(B_SRCS:.c=.o)
@@ -30,22 +33,20 @@ NAME = libft.a
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@$(AR) $(NAME) $(OBJ)
+	$(AR) $(NAME) $(OBJ)
 
-$(OBJ):$(SRCS)
-	@$(CC) $(CFLAGS) -c $(SRCS)
 
 bonus : $(B_OBJ)
 
 $(B_OBJ):$(B_SRCS)
-	@$(CC) $(CFLAGS) -c $(B_SRCS)
-	@$(AR) $(NAME) $(B_OBJ)
+	$(CC) $(CFLAGS) -c $(B_SRCS)
+	$(AR) $(NAME) $(B_OBJ)
 
 clean:
-	@$(RM) $(OBJ) $(B_OBJ)
+	$(RM) $(OBJ) $(B_OBJ)
 
 fclean:
-	@$(RM) $(NAME) $(OBJ) $(B_OBJ)
+	$(RM) $(NAME) $(OBJ) $(B_OBJ)
 re: fclean all
 
 .PHONY : clean fclean all re bonus
