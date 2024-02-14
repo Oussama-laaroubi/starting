@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:41:57 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/13 20:08:05 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/14 00:35:32 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	rrb(t_node **head_b)
 
 void	rrr(t_program *main)
 {
-	rra(&main->head_a);
-	rrb(&main->head_b);
+	reverse_rotate(&main->head_a);
+	reverse_rotate(&main->head_b);
+	write(1, "rrr\n", 4);
 }
