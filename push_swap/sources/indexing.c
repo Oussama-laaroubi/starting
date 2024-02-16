@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 21:20:06 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/13 16:06:17 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/15 19:03:33 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,8 @@ void	set_positions(t_node *head)
 
 void	set_cost(t_program *main)
 {
-	t_node	*current_a;
 	t_node	*current_b;
 
-	current_a = main->head_a;
 	current_b = main->head_b;
 	while (current_b)
 	{

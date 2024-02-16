@@ -6,7 +6,7 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 23:13:39 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/14 18:53:05 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/02/16 11:32:55 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,27 +19,36 @@ SRC = ./sources/main.c ./sources/stack_utils.c ./sources/all_checks.c ./sources/
 SRC += ./sources/helps_for_sort.c ./sources/start_sorting.c ./sources/stack_specs.c
 SRC += ./operations/reverse_rotate.c ./operations/push.c ./operations/swap.c ./operations/rotate.c
 
+B_SRCS = ./bonus/read_instructions.c ./bonus/stack_utils.c
+
 OBJ = $(SRC:.c=.o)
 
+B_OBJ= $(B_SRCS:.c=.o)
+
 NAME = push_swap
+B_NAME = checker_bonus
 
 LIB  = ../libft/libft.a
 
-all : $(NAME)
-
-$(LIB):
-	make -C ../libft/
-
+mandatory : $(NAME)
 
 $(NAME): $(OBJ) $(LIB)
 	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $(NAME)
 
+$(LIB):
+	make -C ../libft/
+
+bonus :	$(B_NAME)
+
+$(B_NAME) : $(B_OBJ) $(LIB)
+	 $(CC) $(CFLAGS) $(B_OBJ) $(LIB) -o $(B_NAME)
+
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(B_OBJ)
 	make clean -C ../libft
 
 fclean:
-	rm -rf $(NAME) $(OBJ)
+	rm -rf $(NAME) $(OBJ) $(B_OBJ) $(B_NAME)
 	make fclean -C ../libft
 
 re: fclean all

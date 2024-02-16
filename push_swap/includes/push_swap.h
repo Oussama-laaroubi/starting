@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/14 18:55:05 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/15 19:10:59 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ typedef struct struct_node
 	int					target_cost;
 	struct struct_node	*next;
 }						t_node;
+
+typedef	struct s_checker
+{
+	t_node				*head_a;
+	t_node				*head_b;
+	size_t				stack_b_size;
+	size_t				stack_a_size;
+}						t_checker;
 
 typedef struct s_program
 {

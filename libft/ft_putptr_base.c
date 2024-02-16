@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 18:24:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/14 22:31:24 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/15 11:21:11 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,8 @@ int	ft_putptr_base(unsigned long n, int base, char c)
 
 	hexa = "0123456789abcdef";
 	count = 0;
-	if (n < 0)
-	{
-		count += write(1, "-", 1);
-		n *= -1;
-		return (ft_putptr_base(n, base, c) + 1);
-	}
-	else if (n < (unsigned long)base)
+
+	if (n < (unsigned long)base)
 		return (ft_putchar(hexa[n]));
 	else
 	{
