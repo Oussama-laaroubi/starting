@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:23:40 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/13 18:52:45 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/17 19:06:46 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ static void	push_b_util_three(t_program *main, size_t size)
 	{
 		if ((size_t)main->head_a->index <= size / 2)
 		{
-			pb(main);
+			pb(main, false);
 			pushed_to_b++;
 		}
 		else
-			ra(&main->head_a);
+			ra(&main->head_a, false);
 	}
 	while (size - pushed_to_b > 3)
 	{
-		pb(main);
+		pb(main, false);
 		pushed_to_b++;
 	}
 }
@@ -90,7 +90,7 @@ static void	rotate_until_min_is_top(t_program *main, t_node *head_a,
 		while ((size_t)min_node_position < stack_a_size)
 		{
 			min_node_position++;
-			rra(&main->head_a);
+			rra(&main->head_a, false);
 		}
 	}
 	else
@@ -98,7 +98,7 @@ static void	rotate_until_min_is_top(t_program *main, t_node *head_a,
 		while (min_node_position)
 		{
 			min_node_position--;
-			ra(&main->head_a);
+			ra(&main->head_a, false);
 		}
 	}
 }

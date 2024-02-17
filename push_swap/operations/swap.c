@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:37:49 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/14 16:35:16 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/17 19:29:18 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,24 @@ static void	swap(t_node **head)
 	*head = tmp;
 }
 
-void	sa(t_node **head)
+void	sa(t_node **head, bool print)
 {
 	swap(head);
-	ft_printf("sa\n");
+	if(!print)
+		ft_printf("sa\n");
 }
 
-void	sb(t_node **head_b)
+void	sb(t_node **head_b, bool print)
 {
 	swap(head_b);
-	ft_printf("sb\n");
+	if(!print)
+		ft_printf("sb\n");
 }
 
-void	ss(t_node **head, t_node **head_b)
+void	ss(t_node **head, t_node **head_b, bool print)
 {
 	swap(head);
 	swap(head_b);
-	ft_printf("ss\n");
+	if(!print)
+		ft_printf("ss\n");
 }

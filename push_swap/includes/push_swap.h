@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/15 19:10:59 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/17 20:56:45 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef	struct s_checker
 
 typedef struct s_program
 {
-	t_node				*head_a;
+	t_node 				*head_a;
 	t_node				*head_b;
 	size_t				stack_b_size;
 	size_t				stack_a_size;
@@ -61,19 +61,24 @@ int						check_duplicates(t_node **head);
 size_t					stack_size(t_node *head);
 bool					stack_sorted(t_node *head);
 void					append_last(t_node **head, int value);
+void					append_last_bonus(t_node **head, int value);
 void					ft_error(char *error);
 void					free_when_error(char **ptr);
 void					deallocate_stack(t_node **head);
 
-void					sa(t_node **head);
-void					ra(t_node **head_a);
-void					pa(t_program *main);
-void					pb(t_program *main);
-void					rra(t_node **head_a);
-void					rrb(t_node **head_b);
-void					rb(t_node **head_b);
-void					rr(t_program *main);
-void					rrr(t_program *main);
+void					sa(t_node **head, bool print);
+void					ra(t_node **head_a, bool print);
+void					pa(t_program *main, bool print);
+void					pb(t_program *main, bool print);
+void					rra(t_node **head_a, bool print);
+void					rrb(t_node **head_b, bool print);
+void					rb(t_node **head_b, bool print);
+void					rr(t_program *main, bool print);
+void 					rrr(t_program *main, bool print);
+void pa_bonus(t_checker *checker);
+void pb_bonus(t_checker *checker);
+void rrr_bonus(t_checker *checker);
+void rr_bonus(t_checker *checker);
 
 void					ft_indexing(t_program *main);
 void					sort_stack(t_program *main);

@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:30:25 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/13 15:52:40 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/17 21:14:05 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	execute_move(struct s_lowest_cost best_move)
 	{
 		while (best_move.cost_at_a < 0 && best_move.cost_at_b < 0)
 		{
-			rrr(best_move.main);
+			rrr(best_move.main, false);
 			(best_move.cost_at_a)++;
 			(best_move.cost_at_b)++;
 		}
@@ -57,14 +57,14 @@ void	execute_move(struct s_lowest_cost best_move)
 	{
 		while (best_move.cost_at_a > 0 && best_move.cost_at_b > 0)
 		{
-			rr(best_move.main);
+			rr(best_move.main, false);
 			(best_move.cost_at_a)--;
 			(best_move.cost_at_b)--;
 		}
 	}
 	single_rotate_b(best_move.main, &best_move.cost_at_b);
 	single_rotate_a(best_move.main, &best_move.cost_at_a);
-	pa(best_move.main);
+	pa(best_move.main, false);
 }
 
 void	single_rotate_a(t_program *main, int *cost_at_a)
@@ -73,12 +73,12 @@ void	single_rotate_a(t_program *main, int *cost_at_a)
 	{
 		if (*(cost_at_a) < 0)
 		{
-			rra(&main->head_a);
+			rra(&main->head_a, false);
 			*(cost_at_a) += 1;
 		}
 		else if (*(cost_at_a) > 0)
 		{
-			ra(&main->head_a);
+			ra(&main->head_a, false);
 			*(cost_at_a) -= 1;
 		}
 	}
@@ -90,12 +90,12 @@ void	single_rotate_b(t_program *main, int *cost_at_b)
 	{
 		if (*(cost_at_b) < 0)
 		{
-			rrb(&main->head_b);
+			rrb(&main->head_b, false);
 			*(cost_at_b) += 1;
 		}
 		else if (*(cost_at_b) > 0)
 		{
-			rb(&main->head_b);
+			rb(&main->head_b, false);
 			*(cost_at_b) -= 1;
 		}
 	}
