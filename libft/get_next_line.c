@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 15:34:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/18 13:55:01 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 21:58:59 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ char	*get_next_line(int fd)
 	static char	*stat;
 	char		*line;
 
+	if(fd == INVALID_FD)
+		return(free(stat), NULL);
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stat = get_bytes(stat, fd);

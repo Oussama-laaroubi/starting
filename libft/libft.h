@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:24:14 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/14 22:43:14 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 22:25:47 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,14 @@ int	ft_putptr_base(unsigned long n, int base, char c);
 
 //==== GET_NEXT_LINE ===//
 
-#if !defined BUFFER_SIZE
+#ifndef BUFFER_SIZE
 #define BUFFER_SIZE 10
 #endif // BUFFER_SIZE
+
+#ifndef INVALID_FD
+#define INVALID_FD -77
+#endif // INVALID_FD
+
 
 unsigned int	ft_strlen_gnl(char *str);
 char			*ft_strdup_gnl(char *s1);

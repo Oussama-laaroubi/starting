@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/18 10:19:44 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 22:25:52 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "stdbool.h"
 
 # define DEF -77
+# define INVALID_FD -77
 
 typedef struct struct_node
 {

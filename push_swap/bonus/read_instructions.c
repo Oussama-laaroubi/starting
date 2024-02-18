@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:47:07 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/18 13:56:42 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 22:28:27 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	ft_fill_stack(t_checker *checker, char **av)
 	checker->head_b = NULL;
 }
 
-static void	apply_instructions(t_checker *checker, char *instructions)
+static int	apply_instructions(t_checker *checker, char *instructions)
 {
 	if (ft_strncmp(instructions, "ra\n", ft_strlen(instructions)) == 0)
 		ra(&checker->head_a, true);
@@ -63,11 +63,11 @@ static void	apply_instructions(t_checker *checker, char *instructions)
 		rr_bonus(checker);
 	else
 	{
+		get_next_line(INVALID_FD);
 		free(instructions);
-		deallocate_stack(&checker->head_a);
-		deallocate_stack(&checker->head_b);
-		ft_error("Error");
+		return(deallocate_stack(&checker->head_a), deallocate_stack(&checker->head_b), -1);
 	}
+	return (0);
 }
 
 int	main(int ac, char **av)
@@ -84,7 +84,8 @@ int	main(int ac, char **av)
 	instructions = get_next_line(0);
 	while (instructions)
 	{
-		apply_instructions(&checker, instructions);
+		if(apply_instructions(&checker, instructions) == -1)
+			ft_error("Error");
 		free(instructions);
 		instructions = get_next_line(0);
 	}
