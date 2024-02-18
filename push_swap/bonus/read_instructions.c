@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:47:07 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/18 22:28:27 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 23:00:49 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,21 @@ static void	ft_fill_stack(t_checker *checker, char **av)
 	checker->head_b = NULL;
 }
 
+static int	check_for_ss_sb(t_checker *checker, char *instructions)
+{
+	if (ft_strncmp(instructions, "sb\n", ft_strlen(instructions)) == 0)
+		sb(&checker->head_b, true);
+	else if (ft_strncmp(instructions, "ss\n", ft_strlen(instructions)) == 0)
+		ss(&checker->head_a, &checker->head_b, true);
+	else
+	{
+		free(instructions);
+		get_next_line(INVALID_FD);
+		return (-1);
+	}
+	return (0);
+}
+
 static int	apply_instructions(t_checker *checker, char *instructions)
 {
 	if (ft_strncmp(instructions, "ra\n", ft_strlen(instructions)) == 0)
@@ -63,9 +78,9 @@ static int	apply_instructions(t_checker *checker, char *instructions)
 		rr_bonus(checker);
 	else
 	{
-		get_next_line(INVALID_FD);
-		free(instructions);
-		return(deallocate_stack(&checker->head_a), deallocate_stack(&checker->head_b), -1);
+		if (check_for_ss_sb(checker, instructions) == -1)
+			return (deallocate_stack(&checker->head_a),
+				deallocate_stack(&checker->head_b), -1);
 	}
 	return (0);
 }
@@ -76,6 +91,8 @@ int	main(int ac, char **av)
 	char		*instructions;
 
 	checker.head_a = NULL;
+	if (ac == 1)
+		exit(0);
 	if (!check_args(av, ac))
 		ft_error("Error");
 	ft_fill_stack(&checker, av);
@@ -84,7 +101,7 @@ int	main(int ac, char **av)
 	instructions = get_next_line(0);
 	while (instructions)
 	{
-		if(apply_instructions(&checker, instructions) == -1)
+		if (apply_instructions(&checker, instructions) == -1)
 			ft_error("Error");
 		free(instructions);
 		instructions = get_next_line(0);

@@ -15,12 +15,12 @@
 
 # include <ctype.h>
 # include <fcntl.h>
+# include <stdarg.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <stdint.h>
-# include <stdarg.h>
 
 //==== LIBFT ===//
 
@@ -79,32 +79,30 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
-
 //==== FT_PRINTF ===//
 
-int	ft_printf(const char *placeholder, ...);
-int	ft_placeholder(char placeholder, va_list args);
-int	ft_putnbr_base(long n, int base, char c);
-int	ft_putptr(void *p, char c);
-int	ft_putstr(char *str);
-int	ft_putchar(int c);
-int	ft_putptr_base(unsigned long n, int base, char c);
+int					ft_printf(const char *placeholder, ...);
+int					ft_placeholder(char placeholder, va_list args);
+int					ft_putnbr_base(long n, int base, char c);
+int					ft_putptr(void *p, char c);
+int					ft_putstr(char *str);
+int					ft_putchar(int c);
+int					ft_putptr_base(unsigned long n, int base, char c);
 
 //==== GET_NEXT_LINE ===//
 
-#ifndef BUFFER_SIZE
-#define BUFFER_SIZE 10
-#endif // BUFFER_SIZE
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif // BUFFER_SIZE
 
-#ifndef INVALID_FD
-#define INVALID_FD -77
-#endif // INVALID_FD
+# ifndef INVALID_FD
+#  define INVALID_FD -77
+# endif // INVALID_FD
 
-
-unsigned int	ft_strlen_gnl(char *str);
-char			*ft_strdup_gnl(char *s1);
-char			*ft_strjoin_gnl(char *s1, char *s2);
-char			*ft_strchr_gnl(char *str, int c);
-char			*get_next_line(int fd);
+unsigned int		ft_strlen_gnl(char *str);
+char				*ft_strdup_gnl(char *s1);
+char				*ft_strjoin_gnl(char *s1, char *s2);
+char				*ft_strchr_gnl(char *str, int c);
+char				*get_next_line(int fd);
 
 #endif

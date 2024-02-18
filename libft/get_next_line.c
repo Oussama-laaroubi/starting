@@ -101,8 +101,8 @@ char	*get_next_line(int fd)
 	static char	*stat;
 	char		*line;
 
-	if(fd == INVALID_FD)
-		return(free(stat), NULL);
+	if (fd == INVALID_FD)
+		return (free(stat), NULL);
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stat = get_bytes(stat, fd);

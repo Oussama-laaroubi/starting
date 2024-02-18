@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/18 22:25:52 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 23:01:14 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void					free_when_error(char **ptr);
 void					deallocate_stack(t_node **head);
 
 void					sa(t_node **head, bool print);
+void					ss(t_node **head, t_node **head_b, bool print);
+void					sb(t_node **head_b, bool print);
 void					ra(t_node **head_a, bool print);
 void					pa(t_program *main, bool print);
 void					pb(t_program *main, bool print);

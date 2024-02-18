@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:41:57 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/17 20:55:28 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 22:50:49 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void	reverse_rotate(t_node **head)
 
 void	rra(t_node **head_a, bool print)
 {
+	if (!*head_a)
+		return ;
 	reverse_rotate(head_a);
 	if (!print)
 		ft_printf("rra\n");
@@ -35,6 +37,8 @@ void	rra(t_node **head_a, bool print)
 
 void	rrb(t_node **head_b, bool print)
 {
+	if (!*head_b)
+		return ;
 	reverse_rotate(head_b);
 	if (!print)
 		ft_printf("rrb\n");
@@ -42,6 +46,8 @@ void	rrb(t_node **head_b, bool print)
 
 void	rrr(t_program *main, bool print)
 {
+	if (!main->head_a || !main->head_b)
+		return ;
 	reverse_rotate(&main->head_a);
 	reverse_rotate(&main->head_b);
 	if (!print)
@@ -50,6 +56,8 @@ void	rrr(t_program *main, bool print)
 
 void	rrr_bonus(t_checker *checker)
 {
+	if (!checker->head_a || !checker->head_b)
+		return ;
 	reverse_rotate(&checker->head_a);
 	reverse_rotate(&checker->head_b);
 }

@@ -19,7 +19,6 @@ int	ft_putptr_base(unsigned long n, int base, char c)
 
 	hexa = "0123456789abcdef";
 	count = 0;
-
 	if (n < (unsigned long)base)
 		return (ft_putchar(hexa[n]));
 	else
