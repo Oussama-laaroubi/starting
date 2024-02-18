@@ -25,14 +25,14 @@ static void	swap(t_node **head)
 void	sa(t_node **head, bool print)
 {
 	swap(head);
-	if(!print)
+	if (!print)
 		ft_printf("sa\n");
 }
 
 void	sb(t_node **head_b, bool print)
 {
 	swap(head_b);
-	if(!print)
+	if (!print)
 		ft_printf("sb\n");
 }
 
@@ -40,6 +40,6 @@ void	ss(t_node **head, t_node **head_b, bool print)
 {
 	swap(head);
 	swap(head_b);
-	if(!print)
+	if (!print)
 		ft_printf("ss\n");
 }

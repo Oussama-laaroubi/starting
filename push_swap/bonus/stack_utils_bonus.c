@@ -6,12 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/17 19:02:05 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 09:54:55 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 void	free_when_error(char **ptr)
 {
@@ -28,21 +27,6 @@ void	ft_error(char *error)
 	write(2, error, ft_strlen(error));
 	write(2, "\n", 1);
 	exit(1);
-}
-
-size_t	stack_size(t_node *head)
-{
-	t_node	*tmp;
-	size_t	cmp;
-
-	cmp = 0;
-	tmp = head;
-	while (tmp)
-	{
-		tmp = tmp->next;
-		cmp++;
-	}
-	return (cmp);
 }
 
 void	append_last_bonus(t_node **head, int value)
@@ -88,26 +72,9 @@ t_node	*find_tail(t_node *head)
 	t_node	*tmp;
 
 	tmp = head;
-
 	if (head == NULL)
 		return (NULL);
 	while (tmp->next != NULL)
 		tmp = tmp->next;
 	return (tmp);
-}
-
-bool	stack_sorted(t_node *head)
-{
-	t_node	*iterator;
-
-	iterator = NULL;
-	while (head)
-	{
-		if (head->next)
-			iterator = head->next;
-		if (iterator && iterator->value < head->value)
-			return (false);
-		head = head->next;
-	}
-	return (true);
 }

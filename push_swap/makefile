@@ -6,7 +6,7 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 23:13:39 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/17 19:00:03 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/02/18 12:02:45 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ SRC = ./sources/main.c ./sources/stack_utils.c ./sources/all_checks.c ./sources/
 SRC += ./sources/helps_for_sort.c ./sources/start_sorting.c ./sources/stack_specs.c
 SRC += ./operations/reverse_rotate.c ./operations/push.c ./operations/swap.c ./operations/rotate.c
 
-B_SRCS = ./bonus/read_instructions.c ./bonus/stack_utils_bonus.c ./sources/all_checks.c
-B_SRCS += ./operations/reverse_rotate.c ./operations/push.c ./operations/swap.c ./operations/rotate.c
+B_SRCS = ./bonus/read_instructions.c ./bonus/stack_utils_bonus.c ./sources/all_checks.c ./sources/stack_specs.c
+B_SRCS += ./operations/reverse_rotate.c ./operations/push.c ./operations/swap.c ./operations/rotate.c ./operations/push_bonus.c
 
 OBJ = $(SRC:.c=.o)
 

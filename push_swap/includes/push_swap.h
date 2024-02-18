@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/17 20:56:45 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 10:19:44 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct struct_node
 	struct struct_node	*next;
 }						t_node;
 
-typedef	struct s_checker
+typedef struct s_checker
 {
 	t_node				*head_a;
 	t_node				*head_b;
@@ -40,7 +40,7 @@ typedef	struct s_checker
 
 typedef struct s_program
 {
-	t_node 				*head_a;
+	t_node				*head_a;
 	t_node				*head_b;
 	size_t				stack_b_size;
 	size_t				stack_a_size;
@@ -74,11 +74,11 @@ void					rra(t_node **head_a, bool print);
 void					rrb(t_node **head_b, bool print);
 void					rb(t_node **head_b, bool print);
 void					rr(t_program *main, bool print);
-void 					rrr(t_program *main, bool print);
-void pa_bonus(t_checker *checker);
-void pb_bonus(t_checker *checker);
-void rrr_bonus(t_checker *checker);
-void rr_bonus(t_checker *checker);
+void					rrr(t_program *main, bool print);
+void					pa_bonus(t_checker *checker);
+void					pb_bonus(t_checker *checker);
+void					rrr_bonus(t_checker *checker);
+void					rr_bonus(t_checker *checker);
 
 void					ft_indexing(t_program *main);
 void					sort_stack(t_program *main);

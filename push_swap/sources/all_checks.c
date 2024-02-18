@@ -48,7 +48,8 @@ static int	check_digits(char **ptr)
 	while (ptr[k])
 	{
 		i = 0;
-		if ((ptr[k][0] == '-' && ft_isdigit(ptr[k][1])) || (ptr[k][0] == '+' && ft_isdigit(ptr[k][1])))
+		if ((ptr[k][0] == '-' && ft_isdigit(ptr[k][1])) || (ptr[k][0] == '+'
+				&& ft_isdigit(ptr[k][1])))
 			i = 1;
 		while (ptr[k][i])
 		{

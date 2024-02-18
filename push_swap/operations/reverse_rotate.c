@@ -29,14 +29,14 @@ static void	reverse_rotate(t_node **head)
 void	rra(t_node **head_a, bool print)
 {
 	reverse_rotate(head_a);
-	if(!print)
+	if (!print)
 		ft_printf("rra\n");
 }
 
 void	rrb(t_node **head_b, bool print)
 {
 	reverse_rotate(head_b);
-	if(!print)
+	if (!print)
 		ft_printf("rrb\n");
 }
 
@@ -44,11 +44,11 @@ void	rrr(t_program *main, bool print)
 {
 	reverse_rotate(&main->head_a);
 	reverse_rotate(&main->head_b);
-	if(!print)
+	if (!print)
 		ft_printf("rrr\n");
 }
 
-void	rrr_bonus(t_checker* checker)
+void	rrr_bonus(t_checker *checker)
 {
 	reverse_rotate(&checker->head_a);
 	reverse_rotate(&checker->head_b);

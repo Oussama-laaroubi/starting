@@ -6,12 +6,11 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:47:07 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/17 21:44:28 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/18 13:56:42 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 static void	ft_fill_stack(t_checker *checker, char **av)
 {
@@ -42,14 +41,39 @@ static void	ft_fill_stack(t_checker *checker, char **av)
 	checker->head_b = NULL;
 }
 
+static void	apply_instructions(t_checker *checker, char *instructions)
+{
+	if (ft_strncmp(instructions, "ra\n", ft_strlen(instructions)) == 0)
+		ra(&checker->head_a, true);
+	else if (ft_strncmp(instructions, "rb\n", ft_strlen(instructions)) == 0)
+		rb(&checker->head_b, true);
+	else if (ft_strncmp(instructions, "sa\n", ft_strlen(instructions)) == 0)
+		sa(&checker->head_a, true);
+	else if (ft_strncmp(instructions, "pb\n", ft_strlen(instructions)) == 0)
+		pb_bonus(checker);
+	else if (ft_strncmp(instructions, "pa\n", ft_strlen(instructions)) == 0)
+		pa_bonus(checker);
+	else if (ft_strncmp(instructions, "rra\n", ft_strlen(instructions)) == 0)
+		rra(&checker->head_a, true);
+	else if (ft_strncmp(instructions, "rrb\n", ft_strlen(instructions)) == 0)
+		rrb(&checker->head_b, true);
+	else if (ft_strncmp(instructions, "rrr\n", ft_strlen(instructions)) == 0)
+		rrr_bonus(checker);
+	else if (ft_strncmp(instructions, "rr\n", ft_strlen(instructions)) == 0)
+		rr_bonus(checker);
+	else
+	{
+		free(instructions);
+		deallocate_stack(&checker->head_a);
+		deallocate_stack(&checker->head_b);
+		ft_error("Error");
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_checker	checker;
-	static char *stat;
-	char **to_split;
-	char *tmp;
-	char *buff = malloc(sizeof(char) * 1024 + 1);
-	ssize_t readed = 1;
+	char		*instructions;
 
 	checker.head_a = NULL;
 	if (!check_args(av, ac))
@@ -57,48 +81,17 @@ int	main(int ac, char **av)
 	ft_fill_stack(&checker, av);
 	if (!check_duplicates(&checker.head_a))
 		ft_error("Error");
-	while (readed > 0)
+	instructions = get_next_line(0);
+	while (instructions)
 	{
-		readed = read(0, buff, 1024);
-		if(readed == -1)
-			return (free(buff), free(stat), ft_error("Error"), 1);
-		buff[readed] = '\0';
-		tmp = ft_strdup_gnl(stat);
-		free(stat);
-		stat = ft_strjoin_gnl(tmp, buff);
-		free(tmp);
+		apply_instructions(&checker, instructions);
+		free(instructions);
+		instructions = get_next_line(0);
 	}
-	free(buff);
-	to_split = ft_split(stat, '\n');
-	int k = 0;
-	while (to_split[k])
-	{
-		if (strncmp(to_split[k], "ra", 2) == 0)
-			ra(&checker.head_a, true);
-		else if (strncmp(to_split[k], "rb", 2) == 0)
-			rb(&checker.head_b, true);
-		else if (strncmp(to_split[k], "sa", 2) == 0)
-			sa(&checker.head_a, true);
-		else if (strncmp(to_split[k], "pb", 2) == 0)
-			pb_bonus(&checker);
-		else if (strncmp(to_split[k], "pa", 2) == 0)
-			pa_bonus(&checker);
-		else if (strncmp(to_split[k], "rra", 3) == 0)
-			rra(&checker.head_a, true);
-		else if (strncmp(to_split[k], "rrb", 3) == 0)
-			rrb(&checker.head_b, true);
-		else if (strncmp(to_split[k], "rrr", 3) == 0)
-			rrr_bonus(&checker);
-		else if (strncmp(to_split[k], "rr", 2) == 0)
-			rr_bonus(&checker);
-		free(to_split[k]);
-		k++;
-	}
-	free(to_split);
 	if (stack_sorted(checker.head_a))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
 	deallocate_stack(&checker.head_a);
-	return 0;
+	return (0);
 }

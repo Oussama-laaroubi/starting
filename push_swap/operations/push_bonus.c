@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 01:51:08 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/18 10:57:26 by olaaroub         ###   ########.fr       */
+/*   Created: 2024/02/18 10:17:04 by olaaroub          #+#    #+#             */
+/*   Updated: 2024/02/18 10:58:25 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,20 @@ static void	push_a(t_node **head_a, t_node **head_b)
 	*head_b = tmp;
 }
 
-void	pb(t_program *main, bool print)
+void	pa_bonus(t_checker *checker)
 {
-	if (!main->head_a)
+	if (!checker->head_b)
 		return ;
-	push_b(&main->head_a, &main->head_b);
-	main->stack_a_size--;
-	main->stack_b_size++;
-	if (!print)
-		ft_printf("pb\n");
+	push_a(&checker->head_a, &checker->head_b);
+	checker->stack_b_size--;
+	checker->stack_a_size++;
 }
 
-void	pa(t_program *main, bool print)
+void	pb_bonus(t_checker *checker)
 {
-	if (!main->head_b)
+	if (!checker->head_a)
 		return ;
-	push_a(&main->head_a, &main->head_b);
-	main->stack_b_size--;
-	main->stack_a_size++;
-	if (!print)
-		ft_printf("pa\n");
+	push_b(&checker->head_a, &checker->head_b);
+	checker->stack_b_size++;
+	checker->stack_a_size--;
 }
