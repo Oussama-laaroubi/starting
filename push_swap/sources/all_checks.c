@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:22:37 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/19 15:27:52 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/19 17:32:06 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static long	ft_atol(char *str)
 	{
 		res = res * 10 + str[i] - '0';
 		i++;
+		if(res > INT_MAX || res < INT_MIN)
+			return res * sign;
 	}
 	return (res * sign);
 }
@@ -115,9 +117,9 @@ int	check_args(char **av, int ac)
 		ptr = ft_split(av[arg], ' ');
 		if (!ptr[0] || !ptr[0][0])
 			return (free_when_error(ptr), 0);
-		if (!check_int(ptr))
-			return (0);
 		if (!check_digits(ptr))
+			return (0);
+		if (!check_int(ptr))
 			return (0);
 		k = 0;
 		while (ptr[k])
