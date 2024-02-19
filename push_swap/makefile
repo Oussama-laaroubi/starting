@@ -6,13 +6,12 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 23:13:39 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/18 21:59:34 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/02/19 15:29:28 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-# CFLAGS = -fsanitize=address -g3 -Wall -Wextra -Werror
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = ./sources/main.c ./sources/stack_utils.c ./sources/all_checks.c ./sources/indexing.c ./sources/sort_stack.c
@@ -54,4 +53,4 @@ fclean:
 
 re: fclean mandatory
 
-
+.PHONY : clean fclean mandatory re bonus

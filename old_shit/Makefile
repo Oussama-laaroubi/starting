@@ -6,7 +6,7 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 10:55:02 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/11 19:44:57 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/02/19 15:26:30 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,27 +18,22 @@ SRC += ./sorts/configure_nodes_a.c ./sorts/configure_nodes_b.c ./sorts/move_node
 OBJ = $(SRC:.c=.o)
 NAME = push_swap
 LIB  = ../libft/libft.a
-PRINTF = ../ft_printf/libftprintf.a
 
 all : $(NAME)
 
 $(LIB):
 	@make -C ../libft/
 
-$(PRINTF):
-	@make -C ../ft_printf/
 
-$(NAME): $(OBJ) $(PRINTF) $(LIB)
-	$(CC) $(CFLAGS) $(OBJ) $(LIB) $(PRINTF) -o $(NAME)
+$(NAME): $(OBJ) $(LIB)
+	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ)
 	make clean -C ../libft
-	make clean -C ../ft_printf
 
 fclean:
 	rm -rf $(NAME) $(OBJ)
 	make fclean -C ../libft
-	make fclean -C ../ft_printf
 
 re: fclean all

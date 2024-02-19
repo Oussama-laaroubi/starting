@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   quicksort.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/19 15:29:49 by olaaroub          #+#    #+#             */
+/*   Updated: 2024/02/19 15:30:26 by olaaroub         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 void	swap(int *a, int *b)
@@ -39,9 +51,7 @@ void	quicksort(int *array, int start, int end)
 
 int	main(void)
 {
-	int	array[];
-
-	array[] = {4, 1, 0, 9, -1};
+	int	array[] = {4, 1, 0, 9, -1};
 	quicksort(array, 0, 4);
 	for (int i = 0; i < 5; i++)
 	{
