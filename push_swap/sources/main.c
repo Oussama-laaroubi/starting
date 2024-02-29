@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:17 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/19 17:37:18 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/29 22:04:23 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ static void	ft_fill_stack(t_program *main, char **av)
 
 	k = 1;
 	if (!av || !av[1][0])
-		ft_error("Error");
+		ft_error(ERROR_MESSAGE);
 	while (av[k])
 	{
 		index = 0;
 		ptr = ft_split(av[k], ' ');
 		if (!ptr)
-			exit(1);
+			ft_error(ERROR_MESSAGE);
 		while (ptr[index])
 		{
 			append_last(&main->head_a, ft_atoi(ptr[index]));
@@ -41,29 +41,6 @@ static void	ft_fill_stack(t_program *main, char **av)
 	main->head_b = NULL;
 }
 
-static void	ft_fill_args(t_program *main, char *av)
-{
-	char	**ptr;
-	int		k;
-
-	k = 0;
-	if (!av || !av[0])
-		ft_error("Error");
-	ptr = ft_split(av, ' ');
-	if (!ptr)
-		exit(1);
-	while (ptr[k])
-	{
-		append_last(&main->head_a, ft_atoi(ptr[k]));
-		free(ptr[k]);
-		k++;
-	}
-	free(ptr);
-	main->stack_a_size = stack_size(main->head_a);
-	main->stack_b_size = 0;
-	main->head_b = NULL;
-}
-
 int	main(int ac, char **av)
 {
 	t_program	main;
@@ -72,25 +49,15 @@ int	main(int ac, char **av)
 	if (ac == 1)
 		return (0);
 	if (!check_args(av, ac))
-		ft_error("Error");
-	if (ac == 2)
-		ft_fill_args(&main, av[1]);
-	else
-		ft_fill_stack(&main, av);
+		ft_error(ERROR_MESSAGE);
+	ft_fill_stack(&main, av);
 	if (!check_duplicates(&main.head_a))
-		ft_error("Error");
+		ft_error(ERROR_MESSAGE);
 	if (!stack_sorted(main.head_a))
 	{
 		ft_indexing(&main);
 		sort_stack(&main);
 	}
-	t_node* tmp = main.head_a;
-	while (tmp)
-	{
-		printf("%d\n", tmp->value);
-		tmp = tmp->next;
-	}
 	deallocate_stack(&main.head_a);
-
 	return (0);
 }

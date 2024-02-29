@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/19 15:27:28 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/29 22:00:37 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	free_when_error(char **ptr)
 void	ft_error(char *error)
 {
 	write(2, error, ft_strlen(error));
-	write(2, "\n", 1);
 	exit(1);
 }
 
@@ -39,8 +38,7 @@ void	append_last(t_node **head, int value)
 	if (new == NULL)
 	{
 		deallocate_stack(head);
-		ft_error("Error");
-		exit(1);
+		ft_error(ERROR_MESSAGE);
 	}
 	new->value = value;
 	new->next = NULL;

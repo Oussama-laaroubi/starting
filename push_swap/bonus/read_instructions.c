@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:47:07 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/19 15:26:46 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/02/29 22:03:45 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ static void	ft_fill_stack(t_checker *checker, char **av)
 
 	k = 1;
 	if (!av || !av[1][0])
-		ft_error("Error");
+		ft_error(ERROR_MESSAGE);
 	while (av[k])
 	{
 		index = 0;
 		ptr = ft_split(av[k], ' ');
 		if (!ptr)
-			exit(1);
+			ft_error(ERROR_MESSAGE);
 		while (ptr[index])
 		{
 			append_last_bonus(&checker->head_a, ft_atoi(ptr[index]));
@@ -92,17 +92,17 @@ int	main(int ac, char **av)
 
 	checker.head_a = NULL;
 	if (ac == 1)
-		exit(0);
+		return (0);
 	if (!check_args(av, ac))
-		ft_error("Error");
+		ft_error(ERROR_MESSAGE);
 	ft_fill_stack(&checker, av);
 	if (!check_duplicates(&checker.head_a))
-		ft_error("Error");
+		ft_error(ERROR_MESSAGE);
 	instructions = get_next_line(0);
 	while (instructions)
 	{
 		if (apply_instructions(&checker, instructions) == -1)
-			ft_error("Error");
+			ft_error(ERROR_MESSAGE);
 		free(instructions);
 		instructions = get_next_line(0);
 	}
