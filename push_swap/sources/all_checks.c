@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:22:37 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/19 17:32:06 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:35:36 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ static long	ft_atol(char *str)
 	{
 		res = res * 10 + str[i] - '0';
 		i++;
-		if(res > INT_MAX || res < INT_MIN)
-			return res * sign;
+		if (res > INT_MAX || res < INT_MIN)
+			return (res * sign);
 	}
 	return (res * sign);
 }
