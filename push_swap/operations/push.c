@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:51:08 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/19 15:27:05 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:27:19 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,22 @@ static void	push_a(t_node **head_a, t_node **head_b)
 	*head_b = tmp;
 }
 
-void	pb(t_program *main, bool print)
+void	pb(t_program *main)
 {
 	if (!main->head_a)
 		return ;
 	push_b(&main->head_a, &main->head_b);
 	main->stack_a_size--;
 	main->stack_b_size++;
-	if (!print)
-		ft_printf("pb\n");
+	ft_printf("pb\n");
 }
 
-void	pa(t_program *main, bool print)
+void	pa(t_program *main)
 {
 	if (!main->head_b)
 		return ;
 	push_a(&main->head_a, &main->head_b);
 	main->stack_b_size--;
 	main->stack_a_size++;
-	if (!print)
-		ft_printf("pa\n");
+	ft_printf("pa\n");
 }

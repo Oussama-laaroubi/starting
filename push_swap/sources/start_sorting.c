@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:23:40 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/03/01 10:42:58 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:27:46 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	push_b_until_three(t_program *main, size_t size)
 	{
 		if ((size_t)main->head_a->index <= size / 2)
 		{
-			pb(main, false);
+			pb(main);
 			pushed_to_b++;
 		}
 		else
@@ -29,7 +29,7 @@ static void	push_b_until_three(t_program *main, size_t size)
 	}
 	while (size - pushed_to_b > 3)
 	{
-		pb(main, false);
+		pb(main);
 		pushed_to_b++;
 	}
 }

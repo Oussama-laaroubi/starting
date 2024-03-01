@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:30:25 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/19 15:27:47 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:28:21 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	execute_move(struct s_lowest_cost best_move)
 	}
 	single_rotate_b(best_move.main, &best_move.cost_at_b);
 	single_rotate_a(best_move.main, &best_move.cost_at_a);
-	pa(best_move.main, false);
+	pa(best_move.main);
 }
 
 void	single_rotate_a(t_program *main, int *cost_at_a)

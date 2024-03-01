@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/29 22:07:45 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:27:31 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void					sa(t_node **head, bool print);
 void					ss(t_node **head, t_node **head_b, bool print);
 void					sb(t_node **head_b, bool print);
 void					ra(t_node **head_a, bool print);
-void					pa(t_program *main, bool print);
-void					pb(t_program *main, bool print);
+void					pa(t_program *main);
+void					pb(t_program *main);
 void					rra(t_node **head_a, bool print);
 void					rrb(t_node **head_b, bool print);
 void					rb(t_node **head_b, bool print);
