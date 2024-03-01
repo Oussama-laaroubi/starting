@@ -6,20 +6,18 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 16:23:40 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/19 15:27:25 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/01 10:42:58 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	push_b_util_three(t_program *main, size_t size)
+static void	push_b_until_three(t_program *main, size_t size)
 {
 	size_t	pushed_to_b;
-	int		i;
 
 	pushed_to_b = 0;
-	i = 0;
-	while (size > 6 && (size_t)++i < size && pushed_to_b < size / 2)
+	while (size > 6 && pushed_to_b < size / 2)
 	{
 		if ((size_t)main->head_a->index <= size / 2)
 		{
@@ -105,7 +103,7 @@ static void	rotate_until_min_is_top(t_program *main, t_node *head_a,
 
 void	start_sorting(t_program *main)
 {
-	push_b_util_three(main, main->stack_a_size);
+	push_b_until_three(main, main->stack_a_size);
 	sort_three(&main->head_a);
 	while (main->head_b)
 	{
