@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:47:07 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/29 22:03:45 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:21:26 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	main(int ac, char **av)
 
 	checker.head_a = NULL;
 	if (ac == 1)
-		return (0);
+		return (EXIT_SUCCESS);
 	if (!check_args(av, ac))
 		ft_error(ERROR_MESSAGE);
 	ft_fill_stack(&checker, av);
@@ -111,5 +111,5 @@ int	main(int ac, char **av)
 	else
 		ft_printf("KO\n");
 	deallocate_stack(&checker.head_a);
-	return (0);
+	return (EXIT_SUCCESS);
 }

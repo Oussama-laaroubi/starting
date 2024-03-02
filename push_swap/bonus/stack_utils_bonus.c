@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:02:36 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/29 21:59:37 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:13:54 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	free_when_error(char **ptr)
 void	ft_error(char *error)
 {
 	write(2, error, ft_strlen(error));
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 void	append_last_bonus(t_node **head, int value)
