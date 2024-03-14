@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:24:14 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/29 22:08:00 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:30:11 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int					ft_putptr_base(unsigned long n, int base, char c);
 # endif // BUFFER_SIZE
 
 # ifndef INVALID_FD
-#  define INVALID_FD -995
+#  define INVALID_FD -77
 # endif // INVALID_FD
 
 unsigned int		ft_strlen_gnl(char *str);

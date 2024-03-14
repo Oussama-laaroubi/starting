@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:20:43 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/03/02 10:30:45 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:30:02 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include "limits.h"
 # include "stdbool.h"
 
-# define DEF -995
-# define INVALID_FD -995
+# define DEF -77
+# define INVALID_FD -77
 # define ERROR_MESSAGE "Error\n"
 
 typedef struct struct_node

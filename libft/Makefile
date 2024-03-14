@@ -6,7 +6,7 @@
 #    By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 11:35:23 by olaaroub          #+#    #+#              #
-#    Updated: 2024/02/19 15:25:57 by olaaroub         ###   ########.fr        #
+#    Updated: 2024/03/14 01:28:48 by olaaroub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,10 +53,10 @@ $(B_OBJ):$(B_SRCS)
 	$(AR) $(NAME) $(B_OBJ)
 
 clean:
-	$(RM) $(OBJ) $(B_OBJ)
+	$(RM) $(OBJ)
 
 fclean:
-	$(RM) $(NAME) $(OBJ) $(B_OBJ)
+	$(RM) $(NAME) $(OBJ)
 re: fclean all
 
 .PHONY : clean fclean all re bonus

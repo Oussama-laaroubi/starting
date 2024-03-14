@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:29:49 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/02/19 15:30:26 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:36:06 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,23 @@ void	quicksort(int *array, int start, int end)
 	}
 }
 
+int* sortedSquares(int* nums, int numsSize) {
+    for(int i = 0; i < numsSize ; i++){
+        nums[i] *= nums[i];
+    }
+    quicksort(nums, 0, numsSize);
+    return nums;
+}
+
 int	main(void)
 {
-	int	array[] = {4, 1, 0, 9, -1};
-	quicksort(array, 0, 4);
+	int nums[] = {-4,-1,0,3,10};
+
+	sortedSquares(nums, 5);
 	for (int i = 0; i < 5; i++)
 	{
-		printf("%d ", array[i]);
+		printf("%d ", nums[i]);
 	}
-	return (0);
+	printf("\n");
+
 }
