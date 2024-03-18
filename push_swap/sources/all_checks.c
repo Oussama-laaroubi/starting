@@ -6,7 +6,7 @@
 /*   By: olaaroub <olaaroub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:22:37 by olaaroub          #+#    #+#             */
-/*   Updated: 2024/03/04 22:39:26 by olaaroub         ###   ########.fr       */
+/*   Updated: 2024/03/18 01:13:35 by olaaroub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	check_duplicates(t_node **head)
 		{
 			if (next->value == tmp->value)
 			{
-				// deallocate_stack(head);
+				deallocate_stack(head);
 				return (0);
 			}
 			next = next->next;
