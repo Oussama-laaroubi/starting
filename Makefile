@@ -28,7 +28,7 @@ B_OBJ= $(B_SRCS:.c=.o)
 NAME = push_swap
 B_NAME = checker_bonus
 
-LIB  = ../libft/libft.a
+LIB  = libft/libft.a
 
 mandatory : $(NAME)
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJ) $(LIB)
 	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $(NAME)
 
 $(LIB):
-	make -C ../libft/
+	make -C libft/
 
 bonus :	$(B_NAME)
 
@@ -45,11 +45,11 @@ $(B_NAME) : $(B_OBJ) $(LIB)
 
 clean:
 	rm -rf $(OBJ) $(B_OBJ)
-	make clean -C ../libft
+	make clean -C libft
 
 fclean:
 	rm -rf $(NAME) $(OBJ) $(B_OBJ) $(B_NAME)
-	make fclean -C ../libft
+	make fclean -C libft
 
 re: fclean mandatory
 
